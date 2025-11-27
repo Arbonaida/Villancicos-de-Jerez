@@ -7,21 +7,18 @@
     <meta name="description" content="Explora la colección completa de villancicos tradicionales de Jerez con búsqueda en tiempo real">
     <meta name="theme-color" content="#1353B4">
     
-    <!-- ICONOS DE LA APLICACIÓN MEJORADOS -->
+    <!-- ICONOS DE LA APLICACIÓN -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
     <link rel="apple-touch-icon" href="icons/icon-192.png">
     <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
-    
-    <!-- Preconexión para mejor rendimiento -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <style>
         /* Sistema de diseño con variables CSS */
         :root {
             --primary-color: #1353B4;
             --primary-dark: #0e3f8a;
+            --primary-light: #4a7bc8;
             --secondary-color: #f4f4f9;
             --text-color: #333;
             --text-light: #666;
@@ -48,7 +45,7 @@
             min-height: 100vh;
         }
 
-        /* Header con logo/icono */
+        /* Header con logo SVG */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: var(--white);
@@ -71,26 +68,20 @@
             gap: 15px;
         }
 
-        /* Icono de la aplicación en el header */
+        /* Icono SVG de la aplicación */
         .app-icon {
             width: 32px;
             height: 32px;
             border-radius: 6px;
-            background: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            box-shadow: var(--shadow-light);
+            filter: brightness(0) invert(1); /* Hace el SVG blanco */
         }
 
-        /* Si prefieres usar una imagen SVG */
-        .app-icon-img {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
+        .app-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         h1 {
@@ -126,6 +117,7 @@
             background-repeat: no-repeat;
             background-position: 1rem center;
             background-size: 1.25rem;
+            color: var(--text-color);
         }
 
         #search-box:focus {
@@ -133,6 +125,10 @@
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(19, 83, 180, 0.1);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231353B4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        #search-box::placeholder {
+            color: var(--text-light);
         }
 
         .listado-villancicos {
@@ -180,21 +176,69 @@
             display: block;
         }
 
+        /* Mejoras de accesibilidad para movimiento reducido */
         @media (prefers-reduced-motion: reduce) {
             * {
                 transition: none !important;
             }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --secondary-color: #1a1a1a;
-                --text-color: #e0e0e0;
-                --text-light: #a0a0a0;
-                --white: #2d2d2d;
+            
+            .villancico-link:hover {
+                transform: none;
             }
         }
 
+        /* MODO OSCURO MEJORADO - Colores más legibles */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #121212;
+                --text-color: #f0f0f0;
+                --text-light: #b0b0b0;
+                --white: #1e1e1e;
+                --shadow-light: 0 2px 4px rgba(0,0,0,0.2);
+                --shadow-medium: 0 4px 8px rgba(0,0,0,0.3);
+            }
+            
+            /* Mejor contraste para el buscador */
+            #search-box {
+                background-color: #2d2d2d;
+                border-color: #404040;
+                color: var(--text-color);
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23b0b0b0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+            }
+            
+            #search-box:focus {
+                border-color: var(--primary-light);
+                box-shadow: 0 0 0 3px rgba(74, 123, 200, 0.2);
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a7bc8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+            }
+            
+            #search-box::placeholder {
+                color: #888;
+            }
+            
+            /* Mejor contraste para los enlaces */
+            .villancico-link {
+                background: #2d2d2d;
+                color: #f0f0f0;
+                border-left-color: var(--primary-light);
+            }
+            
+            .villancico-link:hover {
+                background: #363636;
+                border-left-color: var(--primary-color);
+            }
+            
+            /* Mejor legibilidad para texto de resultados */
+            .results-count {
+                color: #a0a0a0;
+            }
+            
+            .no-results {
+                color: #a0a0a0;
+            }
+        }
+
+        /* Responsive para tablets y escritorio */
         @media (min-width: 768px) {
             body {
                 padding-top: 80px;
@@ -211,12 +255,26 @@
             .app-icon {
                 width: 40px;
                 height: 40px;
-                font-size: 1rem;
+            }
+        }
+
+        /* Mejora para móviles muy pequeños */
+        @media (max-width: 360px) {
+            main {
+                padding: 1rem;
             }
             
-            .app-icon-img {
-                width: 40px;
-                height: 40px;
+            .villancico-link {
+                padding: 1rem;
+            }
+            
+            .header-content {
+                gap: 12px;
+            }
+            
+            .app-icon {
+                width: 28px;
+                height: 28px;
             }
         }
     </style>
@@ -224,12 +282,12 @@
 <body>
     <header>
         <div class="header-content">
-            <!-- ICONO DE LA APLICACIÓN EN EL HEADER -->
-            <div class="app-icon" aria-hidden="true">
-                VJ
+            <!-- ICONO SVG DE LA APLICACIÓN -->
+            <div class="app-icon">
+                <!-- Reemplaza esto con tu SVG o usa una etiqueta img -->
+                <img src="icons/icon.svg" alt="Villancicos de Jerez" onerror="this.style.display='none'">
+                <!-- Si prefieres inline SVG, puedes pegarlo aquí -->
             </div>
-            <!-- O si prefieres usar tu imagen SVG: -->
-            <!-- <img src="icons/icon.svg" alt="Villancicos de Jerez" class="app-icon-img"> -->
             
             <h1>Villancicos de Jerez</h1>
         </div>
