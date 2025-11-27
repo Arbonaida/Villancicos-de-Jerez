@@ -8,12 +8,38 @@
     <link rel="manifest" href="../manifest.json">
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding-top: 60px; color: #333; background-color: #f4f4f9; line-height: 1.6; }
-        header { background-color: #1353B4; color: white; padding: 15px 20px; position: fixed; width: 100%; top: 0; left: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; }
+        header { background-color: #1353B4; color: white; padding: 15px 10px; position: fixed; width: 100%; top: 0; left: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; }
         .back-btn { color: white; text-decoration: none; font-size: 2em; margin-right: 15px; line-height: 1; }
         h1 { margin: 0; font-size: 1.4em; }
         main { padding: 20px; max-width: 600px; margin: 0 auto; text-align: center; }
-        .letra-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); white-space: pre-wrap; text-align: left; }
-        .coro { font-weight: bold; color: #1353B4; margin-bottom: 15px; border-bottom: 2px solid #1353B4; padding-bottom: 5px; }
+        
+        .letra-container { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+            text-align: left; 
+            /* Ajuste de padding para pantallas pequeñas */
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .estrofa {
+            white-space: pre-wrap; /* Mantiene saltos de línea, envuelve texto */
+            margin-top: 15px;      /* Espacio entre estrofas */
+            margin-bottom: 15px;
+            line-height: 1.4;
+            /* Neutraliza el margen por defecto de <pre> */
+            margin-left: 0; 
+            margin-right: 0;
+        }
+
+        .coro { 
+            font-weight: bold; 
+            color: #1353B4; 
+            border-bottom: 2px solid #1353B4; 
+            padding-bottom: 5px; 
+        }
     </style>
 </head>
 <body>
@@ -23,47 +49,50 @@
     </header>
     <main>
         <div class="letra-container">
-            <p class="coro">
-                ESTRIBILLO
-        DE PESTIÑOS Y ALFAJORES
-		DE PESTIÑOS Y ALFAJORES
-		YO ME TENGO QUE “JARTÁ”.
-		QUE SERÁ POR QUÉ,
-		QUE POR QUÉ SERÁ,
-		QUE MIS PARES SON PASTORES,
-		Y NO HAN VUELTO DEL PORTAL,
-		QUE SERA POR QUÉ
-		QUE POR QUÉ SERÁ.
-		Y NO HAN VUELTO DEL PORTAL
-            </p>
-            <p>
-                I
-        YA CORTÉ LA YERBABUENA
-		DE LA TAPIA DEL CORRAL.
-		YA CORTÉ LA YERBABUENA
-		DE LA TAPIA DEL CORRAL.
-		QUE ESTA NOCHE ES NOCHEBUENA
-		Y MAÑANA ES “NAVIDÁ”.
-		QUE ESTA NOCHE ES NOCHEBUENA
-		Y MAÑANA ES “NAVIDÁ”.
-				
-				ESTRIBILLO
-                II
-        SI REPICAN LAS CAMPANAS
-		Y PREGUNTA EL SACRISTÁN,
-		SI REPICAN LAS CAMPANAS
-		Y PREGUNTA EL SACRISTÁN,
-		YA VERÁS CÓMO MAÑANA
-		EN BELÉN TOCANDO ESTÁN.
-		YA VERÁS CÓMO MAÑANA
-		EN BELÉN TOCANDO ESTÁN.
-    
-				ESTRIBILLO
-			</p>
+            
+            <pre class="coro estrofa">
+		ESTRIBILLO<br>
+DE PESTIÑOS Y ALFAJORES<br>
+DE PESTIÑOS Y ALFAJORES<br>
+YO ME TENGO QUE “JARTÁ”.<br>
+QUE SERÁ POR QUÉ,<br>
+QUE POR QUÉ SERÁ,<br>
+QUE MIS PARES SON PASTORES,<br>
+Y NO HAN VUELTO DEL PORTAL,<br>
+QUE SERA POR QUÉ<br>
+QUE POR QUÉ SERÁ.<br>
+Y NO HAN VUELTO DEL PORTAL
+            </pre>
+            
+            <pre class="estrofa">
+		I<br>
+YA CORTÉ LA YERBABUENA<br>
+DE LA TAPIA DEL CORRAL.<br>
+YA CORTÉ LA YERBABUENA<br>
+DE LA TAPIA DEL CORRAL.<br>
+QUE ESTA NOCHE ES NOCHEBUENA<br>
+Y MAÑANA ES “NAVIDÁ”.<br>
+QUE ESTA NOCHE ES NOCHEBUENA<br>
+Y MAÑANA ES “NAVIDÁ”.
+            </pre>
+            
+            <pre class="coro estrofa">ESTRIBILLO</pre>
+
+            <pre class="estrofa">
+		II<br>
+SI REPICAN LAS CAMPANAS<br>
+Y PREGUNTA EL SACRISTÁN,<br>
+SI REPICAN LAS CAMPANAS<br>
+Y PREGUNTA EL SACRISTÁN,<br>
+YA VERÁS CÓMO MAÑANA<br>
+EN BELÉN TOCANDO ESTÁN.<br>
+YA VERÁS CÓMO MAÑANA<br>
+EN BELÉN TOCANDO ESTÁN.
+            </pre>
+            
+            <pre class="coro estrofa">ESTRIBILLO</pre>
+            
         </div>
     </main>
 </body>
-
 </html>
-
-
