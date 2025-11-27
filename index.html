@@ -23,6 +23,18 @@
             top: 0;
             left: 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* Importante para centrar y alinear el icono con el texto */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Estilos para el icono SVG */
+        .header-icon {
+            height: 28px; /* Tamaño del icono */
+            width: auto;
+            margin-right: 10px; /* Separación entre el icono y el título */
+            /* Si su SVG es monocromático, y quiere que tenga el color blanco: */
+            filter: invert(100%); 
         }
         h1 { margin: 0; font-size: 1.8em; }
         main {
@@ -62,6 +74,7 @@
 </head>
 <body>
     <header>
+        <img src="icons/icon.svg" alt="Icono de Villancicos de Jerez" class="header-icon">
         <h1>Villancicos de Jerez</h1>
     </header>
     <main>
@@ -77,7 +90,6 @@
     </main>
 
     <script>
-        // Función para filtrar los villancicos
         function filterVillancicos() {
             const input = document.getElementById('search-box');
             const filter = input.value.toUpperCase();
@@ -87,16 +99,14 @@
             for (let i = 0; i < links.length; i++) {
                 const linkText = links[i].textContent || links[i].innerText;
                 
-                // Si el texto del enlace incluye el filtro
                 if (linkText.toUpperCase().indexOf(filter) > -1) {
-                    links[i].style.display = ""; // Mostrar
+                    links[i].style.display = "";
                 } else {
-                    links[i].style.display = "none"; // Ocultar
+                    links[i].style.display = "none";
                 }
             }
         }
 
-        // 1. Registrar el Service Worker (igual que antes)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/service-worker.js')
@@ -105,7 +115,6 @@
             });
         }
         
-        // 2. Asociar el filtro al evento keyup
         document.getElementById('search-box').addEventListener('keyup', filterVillancicos);
     </script>
 </body>
