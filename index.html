@@ -3,125 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villancicos de Jerez</title>
-    <link rel="manifest" href="manifest.json">
+    <title>Villancicos de Jerez - Colección Completa</title>
+    <meta name="description" content="Explora la colección completa de villancicos tradicionales de Jerez con búsqueda en tiempo real">
     <meta name="theme-color" content="#1353B4">
+    <link rel="manifest" href="manifest.json">
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding-top: 60px; 
-            color: #333;
-            background-color: #f4f4f9;
+        /* Sistema de diseño con variables CSS */
+        :root {
+            --primary-color: #1353B4;
+            --primary-dark: #0e3f8a;
+            --secondary-color: #f4f4f9;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-medium: 0 4px 8px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
         }
+
+        /* Reset moderno */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding-top: 70px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header mejorado */
         header {
-            background-color: #1353B4;
-            color: white;
-            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-medium);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
-        h1 { margin: 0; font-size: 1.8em; }
+
+        .header-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Contenido principal */
         main {
-            padding: 20px;
-            max-width: 600px; 
+            padding: 1.5rem 1.25rem;
+            max-width: 600px;
             margin: 0 auto;
         }
+
+        /* Buscador mejorado */
+        .search-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
         #search-box {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 1em;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e1e5e9;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: var(--white);
+            transition: var(--transition);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 1rem center;
+            background-size: 1.25rem;
         }
+
+        #search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(19, 83, 180, 0.1);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231353B4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        #search-box::placeholder {
+            color: var(--text-light);
+        }
+
+        /* Contador de resultados */
+        .results-count {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Lista de villancicos mejorada */
+        .listado-villancicos {
+            display: grid;
+            gap: 0.75rem;
+        }
+
         .villancico-link {
-            display: block;
-            background: white;
-            margin-bottom: 12px;
-            padding: 15px 20px;
-            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            padding: 1.25rem;
+            border-radius: var(--border-radius);
             text-decoration: none;
-            color: #333;
+            color: var(--text-color);
             font-weight: 600;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-left: 5px solid #1353B4;
-            transition: transform 0.2s;
+            box-shadow: var(--shadow-light);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
             text-transform: uppercase;
-            text-align: left;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            position: relative;
+            overflow: hidden;
         }
-        .villancico-link:hover {
+
+        .villancico-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(19, 83, 180, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .villancico-link:hover::before {
+            left: 100%;
+        }
+
+        .villancico-link:hover,
+        .villancico-link:focus {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-medium);
+            border-left-color: var(--primary-dark);
         }
-        
-        /* MEDIA QUERY PARA RESPONSIVIDAD (Tabletas y Escritorio) */
-        @media (min-width: 768px) {
-            h1 { 
-                font-size: 2.5em; 
+
+        .villancico-link:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Estado sin resultados */
+        .no-results {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
             }
-            main {
-                padding: 40px; 
+            
+            .villancico-link::before {
+                display: none;
             }
+        }
+
+        /* Modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --text-light: #a0a0a0;
+                --white: #2d2d2d;
+            }
+            
             #search-box {
-                padding: 15px; 
+                background-color: #3d3d3d;
+                border-color: #4d4d4d;
+                color: var(--text-color);
             }
+            
+            #search-box:focus {
+                border-color: var(--primary-color);
+            }
+        }
+
+        /* Responsive para tablets y escritorio */
+        @media (min-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+            
+            .header-content {
+                padding: 0 2rem;
+            }
+            
+            main {
+                padding: 2rem;
+            }
+            
+            .listado-villancicos {
+                gap: 1rem;
+            }
+            
             .villancico-link {
-                padding: 20px 30px; 
-                font-size: 1.1em;
+                padding: 1.5rem;
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Mejora para móviles muy pequeños */
+        @media (max-width: 360px) {
+            main {
+                padding: 1rem;
+            }
+            
+            .villancico-link {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Villancicos de Jerez</h1>
+        <div class="header-content">
+            <h1>Villancicos de Jerez</h1>
+        </div>
     </header>
+    
     <main>
-        <input type="text" id="search-box" placeholder="Buscar villancico..." aria-label="Buscar villancico">
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search-box" 
+                placeholder="Buscar villancico..." 
+                aria-label="Buscar villancico"
+                autocomplete="off"
+            >
+        </div>
         
-        <h2>Listado:</h2>
+        <div class="results-count" id="results-count" aria-live="polite"></div>
         
-        <section class="listado-villancicos">
-            <a href="letras/tu-carita-divina.html" class="villancico-link">DE TU CARITA DIVINA</a>
-            <a href="letras/la-hojita-verde.html" class="villancico-link">LA HOJITA VERDE</a>
-            <a href="letras/pestinos-alfajores.html" class="villancico-link">DE PESTIÑOS Y ALFAJORES</a>
+        <section class="listado-villancicos" aria-label="Lista de villancicos">
+            <a href="letras/tu-carita-divina.html" class="villancico-link">
+                DE TU CARITA DIVINA
+            </a>
+            <a href="letras/la-hojita-verde.html" class="villancico-link">
+                LA HOJITA VERDE
+            </a>
+            <a href="letras/pestinos-alfajores.html" class="villancico-link">
+                DE PESTIÑOS Y ALFAJORES
+            </a>
+            <!-- Puedes añadir más villancicos aquí -->
         </section>
+        
+        <div class="no-results" id="no-results" aria-live="polite">
+            <p>No se encontraron villancicos que coincidan con tu búsqueda.</p>
+        </div>
     </main>
 
     <script>
-        // Función para filtrar los villancicos
+        // Función optimizada para filtrar villancicos
         function filterVillancicos() {
             const input = document.getElementById('search-box');
-            const filter = input.value.toUpperCase();
-            const list = document.querySelector('.listado-villancicos');
-            const links = list.getElementsByClassName('villancico-link');
+            const filter = input.value.trim().toUpperCase();
+            const links = document.querySelectorAll('.villancico-link');
+            const resultsCount = document.getElementById('results-count');
+            const noResults = document.getElementById('no-results');
+            
+            let visibleCount = 0;
 
-            for (let i = 0; i < links.length; i++) {
-                const linkText = links[i].textContent || links[i].innerText;
-                if (linkText.toUpperCase().indexOf(filter) > -1) {
-                    links[i].style.display = ""; // Mostrar
-                } else {
-                    links[i].style.display = "none"; // Ocultar
-                }
+            links.forEach(link => {
+                const linkText = link.textContent || link.innerText;
+                const matches = filter === '' || linkText.toUpperCase().includes(filter);
+                
+                link.style.display = matches ? 'flex' : 'none';
+                link.setAttribute('aria-hidden', !matches);
+                
+                if (matches) visibleCount++;
+            });
+
+            // Actualizar contador de resultados
+            const total = links.length;
+            resultsCount.textContent = filter === '' 
+                ? `${total} villancicos disponibles`
+                : `${visibleCount} de ${total} villancicos encontrados`;
+
+            // Mostrar/ocultar mensaje de no resultados
+            noResults.classList.toggle('show', visibleCount === 0 && filter !== '');
+            
+            // Mejorar accesibilidad para lectores de pantalla
+            if (visibleCount === 0 && filter !== '') {
+                resultsCount.textContent = 'No se encontraron resultados';
             }
         }
 
-        // Registrar el Service Worker
+        // Registrar el Service Worker con manejo mejorado de errores
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
-                .then(reg => console.log('Service Worker registrado:', reg))
-                .catch(err => console.log('Registro de Service Worker fallido:', err));
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/service-worker.js');
+                    console.log('Service Worker registrado correctamente:', registration);
+                } catch (error) {
+                    console.warn('Error registrando Service Worker:', error);
+                }
             });
         }
         
-        // Asociar el filtro al evento keyup
-        document.getElementById('search-box').addEventListener('keyup', filterVillancicos);
+        // Event listeners optimizados
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchBox = document.getElementById('search-box');
+            
+            // Búsqueda en tiempo real con debounce
+            let searchTimeout;
+            searchBox.addEventListener('input', () => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(filterVillancicos, 150);
+            });
+            
+            // Búsqueda inmediata al pegar texto
+            searchBox.addEventListener('paste', () => {
+                clearTimeout(searchTimeout);
+                filterVillancicos();
+            });
+            
+            // Inicializar contador de resultados
+            filterVillancicos();
+            
+            // Focus management para mejor UX
+            searchBox.focus();
+        });
+
+        // Manejar cambios en la conectividad
+        window.addEventListener('online', () => {
+            console.log('Aplicación en línea');
+        });
+
+        window.addEventListener('offline', () => {
+            console.log('Aplicación fuera de línea - Modo sin conexión activado');
+        });
     </script>
 </body>
 </html>
