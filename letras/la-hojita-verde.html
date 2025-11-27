@@ -5,61 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letra: La Hojita Verde</title>
     <meta name="theme-color" content="#1353B4">
+    <meta name="description" content="Letra de la canción La Hojita Verde">
     <link rel="manifest" href="../manifest.json">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding-top: 60px; color: #333; background-color: #f4f4f9; line-height: 1.6; }
-        header { background-color: #1353B4; color: white; padding: 15px 10px; position: fixed; width: 100%; top: 0; left: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; }
-        .back-btn { color: white; text-decoration: none; font-size: 2em; margin-right: 15px; line-height: 1; }
-        h1 { margin: 0; font-size: 1.4em; }
-        main { padding: 20px; max-width: 600px; margin: 0 auto; text-align: center; }
-        
-        .letra-container { 
-            background: white; 
-            padding: 25px; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
-            text-align: left; 
-            /* Se ha añadido un padding-left/right más pequeño para que la caja de texto no tenga tanto margen interno */
-            padding-left: 15px;
-            padding-right: 15px;
+        /* Reset y variables CSS */
+        :root {
+            --primary-color: #1353B4;
+            --secondary-color: #f4f4f9;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --border-radius: 8px;
         }
-
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding-top: 60px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Header mejorado */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .back-btn {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 2em;
+            margin-right: 15px;
+            line-height: 1;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+            min-width: 30px;
+        }
+        
+        .back-btn:hover,
+        .back-btn:focus {
+            opacity: 0.8;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: clamp(1.2em, 4vw, 1.4em);
+            font-weight: 600;
+        }
+        
+        /* Contenido principal */
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .letra-container {
+            background: var(--white);
+            padding: clamp(20px, 5vw, 25px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        /* Estrofas optimizadas */
         .estrofa {
             white-space: pre-wrap;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            line-height: 1.4;
-            /* 💥 CAMBIO CLAVE: Eliminar el margen por defecto de la etiqueta <pre> 💥 */
-            margin-left: 0; 
-            margin-right: 0;
+            margin: 15px 0;
+            line-height: 1.5;
+            font-family: inherit;
+            font-size: clamp(14px, 3vw, 16px);
+            overflow-wrap: break-word;
         }
-
+        
         .coro { 
-            font-weight: bold; 
-            color: #1353B4; 
-            border-bottom: 2px solid #1353B4; 
-            padding-bottom: 5px; 
+            font-weight: 700; 
+            color: var(--primary-color); 
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            .back-btn {
+                transition: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding-top: 56px;
+            }
+            
+            header {
+                padding: 12px 10px;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            .letra-container {
+                padding: 15px;
+            }
+            
+            .estrofa {
+                margin: 12px 0;
+            }
+        }
+        
+        /* Mejora para modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #1a1a1a;
+                --text-color: #e0e0e0;
+            }
+            
+            .letra-container {
+                background: #2d2d2d;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="../index.html" class="back-btn">←</a>
+        <a href="../index.html" class="back-btn" aria-label="Volver al inicio">←</a>
         <h1>La Hojita Verde</h1>
     </header>
+    
     <main>
         <div class="letra-container">
+            <!-- Contenido semánticamente mejorado -->
+            <section class="coro estrofa" aria-label="Estribillo">
+ESTRIBILLO:
+A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,
+VAMOS A CANTARLE AL NIÑO DE DIOS
+QUE ESTA NOCHEBUENA EN BELÉN NACIÓ.
+A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,
+VAMOS A CANTARLE A SU MAJESTAD
+QUE NACIÓ EN LA NOCHE DE NAVIDAD.
+A LA HOJITA VERDE DEL LIMONAR.
+            </section>
             
-            <pre class="coro estrofa">ESTRIBILLO:<br>A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,<br>VAMOS A CANTARLE AL NIÑO DE DIOS<br>QUE ESTA NOCHEBUENA EN BELÉN NACIÓ.<br>A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,<br>VAMOS A CANTARLE A SU MAJESTAD<br>QUE NACIÓ EN LA NOCHE DE NAVIDAD.<br>A LA HOJITA VERDE DEL LIMONAR.</pre>
+            <section class="estrofa" aria-label="Primera estrofa">
+I
+ESTE NIÑO QUE A MÍ ME QUITA LAS PENAS,
+ESTE NIÑO, CON SU CARITA MORENA.
+CARITA DE GLORIA TIENE, CARITA DE "EMPERAÓ",
+Y LLEVA SOBRE LAS SIENES LAS POTENCIAS DEL SEÑOR.
+            </section>
             
-            <pre class="estrofa">I<br>ESTE NIÑO QUE A MÍ ME QUITA LAS PENAS,<br>ESTE NIÑO, CON SU CARITA MORENA.<br>CARITA DE GLORIA TIENE, CARITA DE “EMPERAÓ”,<br>Y LLEVA SOBRE LAS SIENES LAS POTENCIAS DEL SEÑOR.</pre>
+            <section class="coro estrofa" aria-label="Estribillo">
+ESTRIBILLO
+            </section>
             
-            <pre class="coro estrofa">ESTRIBILLO</pre>
+            <section class="estrofa" aria-label="Segunda estrofa">
+II
+VIDA MÍA, TÚ QUE GOBIERNAS LA LUZ,
+VIDA MÍA, VAS A "MORÍ" EN UNA CRUZ.
+NO MIRES NIÑO "P'ALANTE",
+NO MIRES NIÑO "P'ATRÁS",
+QUE AHORA TIENES BASTANTE
+CON MIS COPLAS NADA MÁS.
+            </section>
             
-            <pre class="estrofa">II<br>VIDA MÍA, TÚ QUE GOBIERNAS LA LUZ,<br>VIDA MÍA, VAS A “MORÍ” EN UNA CRUZ.<br>NO MIRES NIÑO “P’ALANTE”,<br>NO MIRES NIÑO “P’ATRÁS”,<br>QUE AHORA TIENES BASTANTE<br>CON MIS COPLAS NADA MÁS.</pre>
-            
-            <pre class="coro estrofa">ESTRIBILLO</pre>
-            
+            <section class="coro estrofa" aria-label="Estribillo">
+ESTRIBILLO
+            </section>
         </div>
     </main>
 </body>
