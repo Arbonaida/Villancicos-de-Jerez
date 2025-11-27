@@ -12,8 +12,30 @@
         .back-btn { color: white; text-decoration: none; font-size: 2em; margin-right: 15px; line-height: 1; }
         h1 { margin: 0; font-size: 1.4em; }
         main { padding: 20px; max-width: 600px; margin: 0 auto; text-align: center; }
-        .letra-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); white-space: pre-wrap; text-align: left; }
-        .coro { font-weight: bold; color: #1353B4; margin-bottom: 15px; border-bottom: 2px solid #1353B4; padding-bottom: 5px; }
+        
+        .letra-container { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+            text-align: left; 
+        }
+
+        /* 💥 ESTILO CLAVE PARA ELIMINAR EL ESPACIO EXTRA 💥 */
+        .estrofa {
+            white-space: pre-wrap; /* Mantiene saltos de línea, envuelve texto */
+            margin-top: 10px;      /* Pequeño margen superior para separación */
+            margin-bottom: 10px;   /* Pequeño margen inferior para separación */
+            line-height: 1.4;      /* Ajusta el espaciado de línea dentro de la estrofa */
+        }
+
+        .coro { 
+            font-weight: bold; 
+            color: #1353B4; 
+            border-bottom: 2px solid #1353B4; 
+            padding-bottom: 5px; 
+            margin-bottom: 15px; /* Más espacio después del coro */
+        }
     </style>
 </head>
 <body>
@@ -23,38 +45,45 @@
     </header>
     <main>
         <div class="letra-container">
-            <p class="coro">
-                ESTRIBILLO:
-		A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,
-		VAMOS A CANTARLE AL NIÑO DE DIOS
-		QUE ESTA NOCHEBUENA EN BELÉN NACIÓ.
-		A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,
-		VAMOS A CANTARLE A SU MAJESTAD
-		QUE NACIÓ EN LA NOCHE DE NAVIDAD.
-		A LA HOJITA VERDE DEL LIMONAR.
-                
-            </p>
-            <p>
-               	 I
-		ESTE NIÑO QUE A MÍ ME QUITA LAS PENAS,
-		ESTE NIÑO, CON SU CARITA MORENA.
-		CARITA DE GLORIA TIENE, CARITA DE “EMPERAÓ”,
-		Y LLEVA SOBRE LAS SIENES LAS POTENCIAS DEL SEÑOR..
             
-				ESTRIBILLO
-			    II
-		VIDA MÍA, TÚ QUE GOBIERNAS LA LUZ,
-		VIDA MÍA, VAS A “MORÍ” EN UNA CRUZ.
-		NO MIRES NIÑO “P’ALANTE”,
-		NO MIRES NIÑO “P’ATRÁS”,
-		QUE AHORA TIENES BASTANTE
-		CON MIS COPLAS NADA MÁS.            
-				ESTRIBILLO
-			</p>
+            <pre class="coro estrofa">
+                ESTRIBILLO:
+                A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,
+                VAMOS A CANTARLE AL NIÑO DE DIOS
+                QUE ESTA NOCHEBUENA EN BELÉN NACIÓ.
+                A LA HOJITA VERDE DEL LIMONERO, LIMÓN EN FLOR,
+                VAMOS A CANTARLE A SU MAJESTAD
+                QUE NACIÓ EN LA NOCHE DE NAVIDAD.
+                A LA HOJITA VERDE DEL LIMONAR.
+            </pre>
+            
+            <pre class="estrofa">
+                I
+                ESTE NIÑO QUE A MÍ ME QUITA LAS PENAS,
+                ESTE NIÑO, CON SU CARITA MORENA.
+                CARITA DE GLORIA TIENE, CARITA DE “EMPERAÓ”,
+                Y LLEVA SOBRE LAS SIENES LAS POTENCIAS DEL SEÑOR.
+            </pre>
+            
+            <pre class="coro estrofa">
+                ESTRIBILLO
+            </pre>
+            
+            <pre class="estrofa">
+                II
+                VIDA MÍA, TÚ QUE GOBIERNAS LA LUZ,
+                VIDA MÍA, VAS A “MORÍ” EN UNA CRUZ.
+                NO MIRES NIÑO “P’ALANTE”,
+                NO MIRES NIÑO “P’ATRÁS”,
+                QUE AHORA TIENES BASTANTE
+                CON MIS COPLAS NADA MÁS.
+            </pre>
+            
+            <pre class="coro estrofa">
+                ESTRIBILLO
+            </pre>
+            
         </div>
     </main>
 </body>
-
 </html>
-
-
