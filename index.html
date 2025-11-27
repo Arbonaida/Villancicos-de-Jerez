@@ -23,23 +23,11 @@
             top: 0;
             left: 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            /* Importante para centrar y alinear el icono con el texto */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        /* Estilos para el icono SVG */
-        .header-icon {
-            height: 28px; /* Tamaño del icono */
-            width: auto;
-            margin-right: 10px; /* Separación entre el icono y el título */
-            /* Si su SVG es monocromático, y quiere que tenga el color blanco: */
-            filter: invert(100%); 
         }
         h1 { margin: 0; font-size: 1.8em; }
         main {
             padding: 20px;
-            max-width: 600px;
+            max-width: 600px; 
             margin: 0 auto;
         }
         #search-box {
@@ -70,11 +58,27 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        
+        /* MEDIA QUERY PARA RESPONSIVIDAD (Tabletas y Escritorio) */
+        @media (min-width: 768px) {
+            h1 { 
+                font-size: 2.5em; 
+            }
+            main {
+                padding: 40px; 
+            }
+            #search-box {
+                padding: 15px; 
+            }
+            .villancico-link {
+                padding: 20px 30px; 
+                font-size: 1.1em;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="icons/icon.svg" alt="Icono de Villancicos de Jerez" class="header-icon">
         <h1>Villancicos de Jerez</h1>
     </header>
     <main>
@@ -86,10 +90,11 @@
             <a href="letras/tu-carita-divina.html" class="villancico-link">DE TU CARITA DIVINA</a>
             <a href="letras/la-hojita-verde.html" class="villancico-link">LA HOJITA VERDE</a>
             <a href="letras/pestinos-alfajores.html" class="villancico-link">DE PESTIÑOS Y ALFAJORES</a>
-            </section>
+        </section>
     </main>
 
     <script>
+        // Función para filtrar los villancicos
         function filterVillancicos() {
             const input = document.getElementById('search-box');
             const filter = input.value.toUpperCase();
@@ -98,15 +103,15 @@
 
             for (let i = 0; i < links.length; i++) {
                 const linkText = links[i].textContent || links[i].innerText;
-                
                 if (linkText.toUpperCase().indexOf(filter) > -1) {
-                    links[i].style.display = "";
+                    links[i].style.display = ""; // Mostrar
                 } else {
-                    links[i].style.display = "none";
+                    links[i].style.display = "none"; // Ocultar
                 }
             }
         }
 
+        // Registrar el Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/service-worker.js')
@@ -115,6 +120,7 @@
             });
         }
         
+        // Asociar el filtro al evento keyup
         document.getElementById('search-box').addEventListener('keyup', filterVillancicos);
     </script>
 </body>
