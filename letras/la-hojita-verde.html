@@ -11,8 +11,10 @@
         /* Reset y variables CSS */
         :root {
             --primary-color: #1353B4;
+            --primary-light: #4a7bc8;
             --secondary-color: #f4f4f9;
             --text-color: #333;
+            --text-muted: #666;
             --white: #ffffff;
             --shadow: 0 2px 4px rgba(0,0,0,0.1);
             --border-radius: 8px;
@@ -32,6 +34,7 @@
             background-color: var(--secondary-color);
             line-height: 1.6;
             min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         /* Header mejorado */
@@ -85,6 +88,7 @@
             border-radius: var(--border-radius);
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
             text-align: left;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         
         /* Estrofas optimizadas */
@@ -95,6 +99,18 @@
             font-family: inherit;
             font-size: clamp(14px, 3vw, 16px);
             overflow-wrap: break-word;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        /* Números romanos centrados y en negrita */
+        .estrofa-indicador {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--primary-color);
         }
         
         .coro { 
@@ -103,10 +119,15 @@
             border-bottom: 2px solid var(--primary-color); 
             padding-bottom: 8px;
             margin-bottom: 20px;
+            transition: color 0.3s ease, border-color 0.3s ease;
         }
         
         /* Mejoras de accesibilidad */
         @media (prefers-reduced-motion: reduce) {
+            body, .letra-container, .estrofa, .coro {
+                transition: none;
+            }
+            
             .back-btn {
                 transition: none;
             }
@@ -134,15 +155,68 @@
             }
         }
         
-        /* Mejora para modo oscuro */
+        /* MODO OSCURO MEJORADO - Mayor contraste y legibilidad */
         @media (prefers-color-scheme: dark) {
             :root {
-                --secondary-color: #1a1a1a;
-                --text-color: #e0e0e0;
+                --secondary-color: #121212;
+                --text-color: #f5f5f5;
+                --text-muted: #b0b0b0;
+                --white: #1e1e1e;
+            }
+            
+            body {
+                background-color: var(--secondary-color);
+                color: var(--text-color);
             }
             
             .letra-container {
-                background: #2d2d2d;
+                background: var(--white);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+            
+            .coro {
+                color: var(--primary-light);
+                border-bottom-color: var(--primary-light);
+            }
+            
+            .estrofa-indicador {
+                color: var(--primary-light);
+            }
+            
+            /* Mejorar contraste para todo el texto */
+            .estrofa {
+                color: var(--text-color);
+            }
+            
+            /* Asegurar que el texto sea legible incluso con fuentes más pequeñas */
+            .letra-container {
+                /* Aumentar ligeramente el peso de la fuente para mejor legibilidad */
+                font-weight: 450;
+            }
+        }
+        
+        /* Para usuarios que prefieren alto contraste */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #0044cc;
+                --text-color: #000000;
+            }
+            
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --primary-color: #66a3ff;
+                    --text-color: #ffffff;
+                    --secondary-color: #000000;
+                    --white: #0a0a0a;
+                }
+                
+                .coro {
+                    color: #99c2ff;
+                }
+                
+                .estrofa-indicador {
+                    color: #99c2ff;
+                }
             }
         }
     </style>
@@ -168,7 +242,7 @@ A LA HOJITA VERDE DEL LIMONAR.
             </section>
             
             <section class="estrofa" aria-label="Primera estrofa">
-I
+                <span class="estrofa-indicador">I</span>
 ESTE NIÑO QUE A MÍ ME QUITA LAS PENAS,
 ESTE NIÑO, CON SU CARITA MORENA.
 CARITA DE GLORIA TIENE, CARITA DE "EMPERAÓ",
@@ -180,7 +254,7 @@ ESTRIBILLO
             </section>
             
             <section class="estrofa" aria-label="Segunda estrofa">
-II
+                <span class="estrofa-indicador">II</span>
 VIDA MÍA, TÚ QUE GOBIERNAS LA LUZ,
 VIDA MÍA, VAS A "MORÍ" EN UNA CRUZ.
 NO MIRES NIÑO "P'ALANTE",
