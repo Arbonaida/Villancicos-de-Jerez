@@ -8,12 +8,37 @@
     <link rel="manifest" href="../manifest.json">
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding-top: 60px; color: #333; background-color: #f4f4f9; line-height: 1.6; }
-        header { background-color: #1353B4; color: white; padding: 15px 20px; position: fixed; width: 100%; top: 0; left: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; }
+        header { background-color: #1353B4; color: white; padding: 15px 10px; position: fixed; width: 100%; top: 0; left: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; }
         .back-btn { color: white; text-decoration: none; font-size: 2em; margin-right: 15px; line-height: 1; }
         h1 { margin: 0; font-size: 1.4em; }
         main { padding: 20px; max-width: 600px; margin: 0 auto; text-align: center; }
-        .letra-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); white-space: pre-wrap; text-align: left; }
-        .coro { font-weight: bold; color: #1353B4; margin-bottom: 15px; border-bottom: 2px solid #1353B4; padding-bottom: 5px; }
+        
+        .letra-container { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+            text-align: left; 
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .estrofa {
+            white-space: pre-wrap;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            /* Asegura que no haya sangría inicial */
+            margin-left: 0; 
+            margin-right: 0;
+        }
+
+        .coro { 
+            font-weight: bold; 
+            color: #1353B4; 
+            border-bottom: 2px solid #1353B4; 
+            padding-bottom: 5px; 
+        }
     </style>
 </head>
 <body>
@@ -23,40 +48,43 @@
     </header>
     <main>
         <div class="letra-container">
-            <p class="coro">
-                ESTRIBILLO
-            ENVIDIA TIENEN LAS
-            FUENTES DEL COLOR
-            DE TU CARITA DIVINA,
-            QUE YO ESTOY VIENDO
-            EN LA FRENTE DE MI DIOS
-            UNA CORONA DE ESPINAS,
-            “QUÉ DOLÓ, QUÉ DOLÓ”,
-            UNA CORONA DE ESPINAS.
-            </p>
-            <p>
-                I
-            PASTORES DE LA LAGUNA
-            ECHARSE “TÓS” A LLORAR,
-            QUE EL NIÑO QUE ESTÁ EN LA CUNA
-            EN UNA CRUZ MORIRÁ.
-            ESTRIBILLO
-                II
-            MARÍA DALE COBIJO
-            Y CÚBRELO CON TU MANTO
-            “PA” QUE NO VEA TU HIJO
-            LA TARDE DEL VIERNES SANTO.
-                ESTRIBILLO
-                III
-            LA NOCHE DE NOCHEBUENA
-            PONERSE “TÓS” A CANTAR,
-            QUE ESA CARITA MORENA
-            SONRÍE POR NO LLORAR.
-                ESTRIBILLO
-            </p>
+            
+            <pre class="coro estrofa">
+CORO:<br>
+ENVIDIA TIENEN LAS FUENTES DEL COLOR<br>
+DE TU CARITA DIVINA,<br>
+QUE YO ESTOY VIENDO EN LA FRENTE DE<br>
+MI DIOS<br>
+UNA CORONA DE ESPINAS,<br>
+“QUÉ DOLÓ, QUÉ DOLÓ”,<br>
+UNA CORONA DE ESPINAS.
+            </pre>
+            
+            <pre class="estrofa">
+I<br>
+PASTORES DE LA LAGUNA<br>
+ECHARSE “TÓS” A LLORAR,<br>
+QUE EL NIÑO QUE ESTÁ EN LA CUNA<br>
+EN UNA CRUZ MORIRÁ.
+            </pre>
+            
+            <pre class="estrofa">
+II<br>
+MARÍA DALE COBIJO<br>
+Y CÚBRELO CON TU MANTO<br>
+“PA” QUE NO VEA TU HIJO<br>
+LA TARDE DEL VIERNES SANTO.
+            </pre>
+            
+            <pre class="estrofa">
+III<br>
+LA NOCHE DE NOCHEBUENA<br>
+PONERSE “TÓS” A CANTAR,<br>
+QUE ESA CARITA MORENA<br>
+SONRÍE POR NO LLORAR.
+            </pre>
+            
         </div>
     </main>
 </body>
-
 </html>
-
