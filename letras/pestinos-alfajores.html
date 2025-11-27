@@ -5,93 +5,274 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letra: De Pestiños y Alfajores</title>
     <meta name="theme-color" content="#1353B4">
+    <meta name="description" content="Letra de la canción De Pestiños y Alfajores">
     <link rel="manifest" href="../manifest.json">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding-top: 60px; color: #333; background-color: #f4f4f9; line-height: 1.6; }
-        header { background-color: #1353B4; color: white; padding: 15px 10px; position: fixed; width: 100%; top: 0; left: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; }
-        .back-btn { color: white; text-decoration: none; font-size: 2em; margin-right: 15px; line-height: 1; }
-        h1 { margin: 0; font-size: 1.4em; }
-        main { padding: 20px; max-width: 600px; margin: 0 auto; text-align: center; }
+        /* Reset y variables CSS */
+        :root {
+            --primary-color: #1353B4;
+            --primary-light: #4a7bc8;
+            --secondary-color: #f4f4f9;
+            --text-color: #333;
+            --text-muted: #666;
+            --white: #ffffff;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+        }
         
-        .letra-container { 
-            background: white; 
-            padding: 25px; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
-            text-align: left; 
-            /* Ajuste de padding para pantallas pequeñas */
-            padding-left: 15px;
-            padding-right: 15px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding-top: 60px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Header mejorado */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .back-btn {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 2em;
+            margin-right: 15px;
+            line-height: 1;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+            min-width: 30px;
+        }
+        
+        .back-btn:hover,
+        .back-btn:focus {
+            opacity: 0.8;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: clamp(1.2em, 4vw, 1.4em);
+            font-weight: 600;
+        }
+        
+        /* Contenido principal */
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .letra-container {
+            background: var(--white);
+            padding: clamp(20px, 5vw, 25px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Estrofas optimizadas */
         .estrofa {
-            white-space: pre-wrap; /* Mantiene saltos de línea, envuelve texto */
-            margin-top: 15px;      /* Espacio entre estrofas */
-            margin-bottom: 15px;
-            line-height: 1.4;
-            /* Neutraliza el margen por defecto de <pre> */
-            margin-left: 0; 
-            margin-right: 0;
+            white-space: pre-wrap;
+            margin: 15px 0;
+            line-height: 1.5;
+            font-family: inherit;
+            font-size: clamp(14px, 3vw, 16px);
+            overflow-wrap: break-word;
+            transition: color 0.3s ease;
         }
-
+        
+        /* Números romanos centrados y en negrita */
+        .estrofa-indicador {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+        
         .coro { 
-            font-weight: bold; 
-            color: #1353B4; 
-            border-bottom: 2px solid #1353B4; 
-            padding-bottom: 5px; 
+            font-weight: 700; 
+            color: var(--primary-color); 
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            body, .letra-container, .estrofa, .coro {
+                transition: none;
+            }
+            
+            .back-btn {
+                transition: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding-top: 56px;
+            }
+            
+            header {
+                padding: 12px 10px;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            .letra-container {
+                padding: 15px;
+            }
+            
+            .estrofa {
+                margin: 12px 0;
+            }
+        }
+        
+        /* MODO OSCURO MEJORADO - Mayor contraste y legibilidad */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #121212;
+                --text-color: #f5f5f5;
+                --text-muted: #b0b0b0;
+                --white: #1e1e1e;
+            }
+            
+            body {
+                background-color: var(--secondary-color);
+                color: var(--text-color);
+            }
+            
+            .letra-container {
+                background: var(--white);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+            
+            .coro {
+                color: var(--primary-light);
+                border-bottom-color: var(--primary-light);
+            }
+            
+            .estrofa-indicador {
+                color: var(--primary-light);
+            }
+            
+            /* Mejorar contraste para todo el texto */
+            .estrofa {
+                color: var(--text-color);
+            }
+            
+            /* Asegurar que el texto sea legible incluso con fuentes más pequeñas */
+            .letra-container {
+                /* Aumentar ligeramente el peso de la fuente para mejor legibilidad */
+                font-weight: 450;
+            }
+        }
+        
+        /* Para usuarios que prefieren alto contraste */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #0044cc;
+                --text-color: #000000;
+            }
+            
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --primary-color: #66a3ff;
+                    --text-color: #ffffff;
+                    --secondary-color: #000000;
+                    --white: #0a0a0a;
+                }
+                
+                .coro {
+                    color: #99c2ff;
+                }
+                
+                .estrofa-indicador {
+                    color: #99c2ff;
+                }
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="../index.html" class="back-btn">←</a>
+        <a href="../index.html" class="back-btn" aria-label="Volver al inicio">←</a>
         <h1>De Pestiños y Alfajores</h1>
     </header>
+    
     <main>
         <div class="letra-container">
-            
-            <pre class="coro estrofa">
-		ESTRIBILLO<br>
-DE PESTIÑOS Y ALFAJORES<br>
-DE PESTIÑOS Y ALFAJORES<br>
-YO ME TENGO QUE “JARTÁ”.<br>
-QUE SERÁ POR QUÉ,<br>
-QUE POR QUÉ SERÁ,<br>
-QUE MIS PARES SON PASTORES,<br>
-Y NO HAN VUELTO DEL PORTAL,<br>
-QUE SERA POR QUÉ<br>
-QUE POR QUÉ SERÁ.<br>
+            <section class="coro estrofa" aria-label="Estribillo">
+ESTRIBILLO
+DE PESTIÑOS Y ALFAJORES
+DE PESTIÑOS Y ALFAJORES
+YO ME TENGO QUE "JARTÁ".
+QUE SERÁ POR QUÉ,
+QUE POR QUÉ SERÁ,
+QUE MIS PARES SON PASTORES,
+Y NO HAN VUELTO DEL PORTAL,
+QUE SERA POR QUÉ
+QUE POR QUÉ SERÁ.
 Y NO HAN VUELTO DEL PORTAL
-            </pre>
+            </section>
             
-            <pre class="estrofa">
-		I<br>
-YA CORTÉ LA YERBABUENA<br>
-DE LA TAPIA DEL CORRAL.<br>
-YA CORTÉ LA YERBABUENA<br>
-DE LA TAPIA DEL CORRAL.<br>
-QUE ESTA NOCHE ES NOCHEBUENA<br>
-Y MAÑANA ES “NAVIDÁ”.<br>
-QUE ESTA NOCHE ES NOCHEBUENA<br>
-Y MAÑANA ES “NAVIDÁ”.
-            </pre>
+            <section class="estrofa" aria-label="Primera estrofa">
+                <span class="estrofa-indicador">I</span>
+YA CORTÉ LA YERBABUENA
+DE LA TAPIA DEL CORRAL.
+YA CORTÉ LA YERBABUENA
+DE LA TAPIA DEL CORRAL.
+QUE ESTA NOCHE ES NOCHEBUENA
+Y MAÑANA ES "NAVIDÁ".
+QUE ESTA NOCHE ES NOCHEBUENA
+Y MAÑANA ES "NAVIDÁ".
+            </section>
             
-            <pre class="coro estrofa">ESTRIBILLO</pre>
+            <section class="coro estrofa" aria-label="Estribillo">
+ESTRIBILLO
+            </section>
 
-            <pre class="estrofa">
-		II<br>
-SI REPICAN LAS CAMPANAS<br>
-Y PREGUNTA EL SACRISTÁN,<br>
-SI REPICAN LAS CAMPANAS<br>
-Y PREGUNTA EL SACRISTÁN,<br>
-YA VERÁS CÓMO MAÑANA<br>
-EN BELÉN TOCANDO ESTÁN.<br>
-YA VERÁS CÓMO MAÑANA<br>
+            <section class="estrofa" aria-label="Segunda estrofa">
+                <span class="estrofa-indicador">II</span>
+SI REPICAN LAS CAMPANAS
+Y PREGUNTA EL SACRISTÁN,
+SI REPICAN LAS CAMPANAS
+Y PREGUNTA EL SACRISTÁN,
+YA VERÁS CÓMO MAÑANA
 EN BELÉN TOCANDO ESTÁN.
-            </pre>
+YA VERÁS CÓMO MAÑANA
+EN BELÉN TOCANDO ESTÁN.
+            </section>
             
-            <pre class="coro estrofa">ESTRIBILLO</pre>
-            
+            <section class="coro estrofa" aria-label="Estribillo">
+ESTRIBILLO
+            </section>
         </div>
     </main>
 </body>
