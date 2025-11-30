@@ -49,6 +49,8 @@
             --border-radius: 8px;
             --transition: all 0.3s ease;
             --safe-area-top: env(safe-area-inset-top);
+            --safe-area-left: env(safe-area-inset-left);
+            --safe-area-right: env(safe-area-inset-right);
         }
 
         * {
@@ -61,6 +63,9 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             margin: 0;
             padding-top: calc(70px + var(--safe-area-top));
+            /* Soporte para móviles en horizontal (notch lateral) */
+            padding-left: var(--safe-area-left);
+            padding-right: var(--safe-area-right);
             color: var(--text-color);
             background-color: var(--secondary-color);
             line-height: 1.6;
@@ -80,6 +85,9 @@
             box-shadow: var(--shadow-medium);
             z-index: 1000;
             backdrop-filter: blur(10px);
+            /* Asegurar que el header cubra todo el ancho incluso con notch lateral */
+            padding-left: var(--safe-area-left);
+            padding-right: var(--safe-area-right);
         }
 
         .header-content {
@@ -137,6 +145,14 @@
             border-radius: var(--border-radius);
             font-size: 1rem;
             background: var(--white);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Estado focus para modo claro */
+        #search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(19, 83, 180, 0.2);
         }
 
         /* Botón limpiar búsqueda */
@@ -333,35 +349,36 @@
         <div id="update-toast">Nueva versión disponible. Pulsa para actualizar.</div>
 
         <section class="listado-villancicos" aria-label="Lista de villancicos">
+            <!-- Nombres de archivo normalizados: minúsculas, sin tildes/ñ, guiones en vez de espacios -->
             <a href="letras/al-pasar-por-casablanca.html" class="villancico-link">AL PASAR POR CASABLANCA</a>
-            <a href="letras/calle-de-San-Francisco.html" class="villancico-link">CALLE DE SAN FRANCISCO</a>
-            <a href="letras/Camina-la-virgen-pura.html" class="villancico-link">CAMINA LA VIRGEN PURA</a>
+            <a href="letras/calle-de-san-francisco.html" class="villancico-link">CALLE DE SAN FRANCISCO</a>
+            <a href="letras/camina-la-virgen-pura.html" class="villancico-link">CAMINA LA VIRGEN PURA</a>
             <a href="letras/de-las-doce-palabras-retorneadas.html" class="villancico-link">DE LAS DOCE PALABRAS
                 RETORNEADAS</a>
-            <a href="letras/pestinos-alfajores.html" class="villancico-link">DE PESTIÑOS Y ALFAJORES</a>
-            <a href="letras/tu-carita-divina.html" class="villancico-link">DE TU CARITA DIVINA</a>
-            <a href="letras/Dime-niño.html" class="villancico-link">DIME NIÑO</a>
+            <a href="letras/de-pestinos-y-alfajores.html" class="villancico-link">DE PESTIÑOS Y ALFAJORES</a>
+            <a href="letras/de-tu-carita-divina.html" class="villancico-link">DE TU CARITA DIVINA</a>
+            <a href="letras/dime-nino.html" class="villancico-link">DIME NIÑO</a>
             <a href="letras/el-ayayay.html" class="villancico-link">EL AYAYAY</a>
             <a href="letras/el-cura-no-va-a-la-iglesia.html" class="villancico-link">EL CURA NO VA A LA IGLESIA</a>
             <a href="letras/el-melo-melo.html" class="villancico-link">EL MELO MELO</a>
-            <a href="letras/el-rio-de-Cartuja.html" class="villancico-link">EL RÍO DE CARTUJA</a>
+            <a href="letras/el-rio-de-cartuja.html" class="villancico-link">EL RÍO DE CARTUJA</a>
             <a href="letras/estando-un-curita.html" class="villancico-link">ESTANDO UN CURITA</a>
-            <a href="letras/hacia-Roma-caminan-los-peregrinos.html" class="villancico-link">HACIA ROMA CAMINAN LOS
+            <a href="letras/hacia-roma-caminan-los-peregrinos.html" class="villancico-link">HACIA ROMA CAMINAN LOS
                 PEREGRINOS</a>
-            <a href="letras/jardín-de-Venus.html" class="villancico-link">JARDÍN DE VENUS</a>
+            <a href="letras/jardin-de-venus.html" class="villancico-link">JARDÍN DE VENUS</a>
             <a href="letras/la-hojita-verde.html" class="villancico-link">LA HOJITA VERDE</a>
-            <a href="letras/la-Micaela.html" class="villancico-link">LA MICAELA</a>
+            <a href="letras/la-micaela.html" class="villancico-link">LA MICAELA</a>
             <a href="letras/leru-leru.html" class="villancico-link">LERU LERU</a>
             <a href="letras/levanta-la-hoja.html" class="villancico-link">LEVANTA LA HOJA</a>
             <a href="letras/los-caminos-se-hicieron.html" class="villancico-link">LOS CAMINOS SE HICIERON</a>
             <a href="letras/los-campanilleros.html" class="villancico-link">LOS CAMPANILLEROS</a>
             <a href="letras/los-segadores.html" class="villancico-link">LOS SEGADORES</a>
-            <a href="letras/madroños-al-niño.html" class="villancico-link">MADROÑOS AL NIÑO</a>
-            <a href="letras/marinerito-ramiré.html" class="villancico-link">MARINERITO RAMIRÉ</a>
+            <a href="letras/madronos-al-nino.html" class="villancico-link">MADROÑOS AL NIÑO</a>
+            <a href="letras/marinerito-ramire.html" class="villancico-link">MARINERITO RAMIRÉ</a>
             <a href="letras/mi-carbonero.html" class="villancico-link">MI CARBONERO</a>
-            <a href="letras/señor-Don-Gato.html" class="villancico-link">SEÑOR DON GATO</a>
-            <a href="letras/tin-tin-Catalina.html" class="villancico-link">TIN TIN CATALINA</a>
-            <a href="letras/un-pastor-lleva-una burra.html" class="villancico-link">UN PASTOR LLEVA UNA BURRA</a>
+            <a href="letras/senor-don-gato.html" class="villancico-link">SEÑOR DON GATO</a>
+            <a href="letras/tin-tin-catalina.html" class="villancico-link">TIN TIN CATALINA</a>
+            <a href="letras/un-pastor-lleva-una-burra.html" class="villancico-link">UN PASTOR LLEVA UNA BURRA</a>
         </section>
 
         <div class="no-results" id="no-results" aria-live="polite">
@@ -374,6 +391,15 @@
             const searchBox = document.getElementById('search-box');
             const clearBtn = document.getElementById('clear-search');
             let searchTimeout;
+
+            // Función para actualizar estado del botón "limpiar"
+            function updateClearButton() {
+                if (searchBox.value.length > 0) {
+                    clearBtn.classList.add('visible');
+                } else {
+                    clearBtn.classList.remove('visible');
+                }
+            }
 
             function filterVillancicos() {
                 const filter = searchBox.value.trim().toUpperCase();
@@ -397,15 +423,14 @@
 
                 noResults.classList.toggle('show', visibleCount === 0 && filter !== '');
 
-                if (searchBox.value.length > 0) {
-                    clearBtn.classList.add('visible');
-                } else {
-                    clearBtn.classList.remove('visible');
-                }
+                updateClearButton();
             }
 
             searchBox.addEventListener('input', () => {
                 clearTimeout(searchTimeout);
+                // Actualizamos visualmente el botón de borrar inmediatamente
+                updateClearButton();
+                // Retrasamos el filtrado pesado
                 searchTimeout = setTimeout(filterVillancicos, 150);
             });
 
@@ -415,32 +440,42 @@
                 filterVillancicos();
             });
 
+            // Inicializar filtro y botón por si hay texto guardado por el navegador
             filterVillancicos();
         });
 
-        // REGISTRO SW COMPATIBLE CON GITHUB PAGES
+        // REGISTRO SW COMPATIBLE CON GITHUB PAGES Y ACTUALIZACIÓN CORRECTA
         if ('serviceWorker' in navigator) {
+            let newWorker;
+
+            // Manejador para recargar cuando el SW nuevo tome el control
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                window.location.reload();
+            });
+
             window.addEventListener('load', async () => {
                 try {
-                    // Ruta relativa './' para que funcione en subdirectorios
                     const registration = await navigator.serviceWorker.register('./service-worker.js', {
                         scope: './'
                     });
 
                     registration.addEventListener('updatefound', () => {
-                        const newWorker = registration.installing;
+                        newWorker = registration.installing;
+
                         newWorker.addEventListener('statechange', () => {
+                            // Si hay un nuevo SW instalado y esperando (waiting)
                             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                                 const toast = document.getElementById('update-toast');
                                 toast.style.display = 'block';
+
                                 toast.addEventListener('click', () => {
-                                    window.location.reload();
+                                    // Enviar mensaje al SW para que salte la espera
+                                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                    toast.style.display = 'none';
                                 });
                             }
                         });
                     });
-
-                    console.log('SW registrado:', registration);
                 } catch (error) {
                     console.warn('Error SW:', error);
                 }
