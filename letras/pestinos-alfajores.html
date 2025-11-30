@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letra: De Pestiños y Alfajores</title>
+    <title>Letra: De Pestiños y Alfajores - Villancicos de Jerez</title>
     <meta name="theme-color" content="#1353B4">
-    <meta name="description" content="Letra de la canción De Pestiños y Alfajores">
+    <meta name="description"
+        content="Letra del villancico 'De Pestiños y Alfajores'. De pestiños y alfajores yo me tengo que jartá... Villancicos tradicionales de Jerez.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="music.song">
+    <meta property="og:url" content="https://villancicosdejerez.com/letras/pestinos-alfajores.html">
+    <meta property="og:title" content="De Pestiños y Alfajores - Letra">
+    <meta property="og:description"
+        content="Letra del villancico 'De Pestiños y Alfajores'. De pestiños y alfajores yo me tengo que jartá...">
+    <meta property="og:image" content="../assets/icon-512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="De Pestiños y Alfajores - Letra">
+    <meta property="twitter:description"
+        content="Letra del villancico 'De Pestiños y Alfajores'. Villancicos tradicionales.">
+
     <link rel="manifest" href="../manifest.json">
+
+    <!-- JSON-LD Datos Estructurados -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicComposition",
+      "name": "De Pestiños y Alfajores",
+      "composer": "Tradicional",
+      "lyrics": {
+        "@type": "CreativeWork",
+        "text": "De pestiños y alfajores yo me tengo que jartá..."
+      },
+      "inLanguage": "es"
+    }
+    </script>
+
     <style>
         /* Reset y variables CSS */
         :root {
@@ -16,32 +49,32 @@
             --text-color: #333;
             --text-muted: #666;
             --white: #ffffff;
-            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             --border-radius: 8px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             margin: 0;
-            padding-top: 60px;
+            padding-top: 70px;
             color: var(--text-color);
             background-color: var(--secondary-color);
             line-height: 1.6;
             min-height: 100vh;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
+
         /* Header mejorado */
         header {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 15px 10px;
+            padding: 10px 15px;
             position: fixed;
             width: 100%;
             top: 0;
@@ -49,31 +82,73 @@
             box-shadow: var(--shadow);
             display: flex;
             align-items: center;
+            justify-content: space-between;
             z-index: 1000;
+            flex-wrap: wrap;
         }
-        
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
         .back-btn {
             color: var(--white);
             text-decoration: none;
-            font-size: 2em;
+            font-size: 1.8em;
             margin-right: 15px;
             line-height: 1;
             transition: opacity 0.3s ease;
             display: inline-block;
-            min-width: 30px;
         }
-        
+
         .back-btn:hover,
         .back-btn:focus {
             opacity: 0.8;
         }
-        
+
         h1 {
             margin: 0;
-            font-size: clamp(1.2em, 4vw, 1.4em);
+            font-size: clamp(1.1em, 3vw, 1.3em);
             font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        
+
+        /* Toolbar de acciones */
+        .action-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 1.1em;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+
         /* Contenido principal */
         main {
             padding: 20px;
@@ -81,27 +156,28 @@
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .letra-container {
             background: var(--white);
             padding: clamp(20px, 5vw, 25px);
             border-radius: var(--border-radius);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             text-align: left;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
-        
+
         /* Estrofas optimizadas */
         .estrofa {
             white-space: pre-wrap;
             margin: 15px 0;
             line-height: 1.5;
             font-family: inherit;
-            font-size: clamp(14px, 3vw, 16px);
+            font-size: clamp(16px, 3vw, 18px);
             overflow-wrap: break-word;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, font-size 0.2s ease;
         }
-        
+
         /* Números romanos centrados y en negrita */
         .estrofa-indicador {
             display: block;
@@ -111,50 +187,72 @@
             font-size: 1.1em;
             color: var(--primary-color);
         }
-        
-        .coro { 
-            font-weight: 700; 
-            color: var(--primary-color); 
-            border-bottom: 2px solid var(--primary-color); 
+
+        .coro {
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 8px;
             margin-bottom: 20px;
             transition: color 0.3s ease, border-color 0.3s ease;
         }
-        
+
+        /* Toast de notificación */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 2000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+
         /* Mejoras de accesibilidad */
         @media (prefers-reduced-motion: reduce) {
-            body, .letra-container, .estrofa, .coro {
-                transition: none;
-            }
-            
-            .back-btn {
+
+            body,
+            .letra-container,
+            .estrofa,
+            .coro,
+            .action-btn {
                 transition: none;
             }
         }
-        
+
         @media (max-width: 480px) {
             body {
-                padding-top: 56px;
+                padding-top: 65px;
             }
-            
+
             header {
-                padding: 12px 10px;
+                padding: 10px;
             }
-            
+
             main {
                 padding: 15px;
             }
-            
+
             .letra-container {
                 padding: 15px;
             }
-            
-            .estrofa {
-                margin: 12px 0;
-            }
         }
-        
-        /* MODO OSCURO MEJORADO - Mayor contraste y legibilidad */
+
+        /* MODO OSCURO MEJORADO */
         @media (prefers-color-scheme: dark) {
             :root {
                 --secondary-color: #121212;
@@ -162,118 +260,175 @@
                 --text-muted: #b0b0b0;
                 --white: #1e1e1e;
             }
-            
+
             body {
                 background-color: var(--secondary-color);
                 color: var(--text-color);
             }
-            
+
             .letra-container {
                 background: var(--white);
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             }
-            
+
             .coro {
                 color: var(--primary-light);
                 border-bottom-color: var(--primary-light);
             }
-            
+
             .estrofa-indicador {
                 color: var(--primary-light);
             }
-            
-            /* Mejorar contraste para todo el texto */
+
             .estrofa {
                 color: var(--text-color);
             }
-            
-            /* Asegurar que el texto sea legible incluso con fuentes más pequeñas */
+
             .letra-container {
-                /* Aumentar ligeramente el peso de la fuente para mejor legibilidad */
                 font-weight: 450;
-            }
-        }
-        
-        /* Para usuarios que prefieren alto contraste */
-        @media (prefers-contrast: high) {
-            :root {
-                --primary-color: #0044cc;
-                --text-color: #000000;
-            }
-            
-            @media (prefers-color-scheme: dark) {
-                :root {
-                    --primary-color: #66a3ff;
-                    --text-color: #ffffff;
-                    --secondary-color: #000000;
-                    --white: #0a0a0a;
-                }
-                
-                .coro {
-                    color: #99c2ff;
-                }
-                
-                .estrofa-indicador {
-                    color: #99c2ff;
-                }
             }
         }
     </style>
 </head>
+
 <body>
     <header>
-        <a href="../index.html" class="back-btn" aria-label="Volver al inicio">←</a>
-        <h1>De Pestiños y Alfajores</h1>
+        <div class="header-left">
+            <a href="../index.html" class="back-btn" aria-label="Volver al inicio">←</a>
+            <h1>De Pestiños y Alfajores</h1>
+        </div>
+        <div class="action-toolbar">
+            <button class="action-btn" id="btn-decrease" aria-label="Disminuir tamaño de letra">A-</button>
+            <button class="action-btn" id="btn-increase" aria-label="Aumentar tamaño de letra">A+</button>
+            <button class="action-btn" id="btn-copy" aria-label="Copiar letra">📋</button>
+            <button class="action-btn" id="btn-share" aria-label="Compartir">🔗</button>
+        </div>
     </header>
-    
+
     <main>
-        <div class="letra-container">
+        <div class="letra-container" id="letra-content">
             <section class="coro estrofa" aria-label="Estribillo">
-ESTRIBILLO
-DE PESTIÑOS Y ALFAJORES
-DE PESTIÑOS Y ALFAJORES
-YO ME TENGO QUE "JARTÁ".
-QUE SERÁ POR QUÉ,
-QUE POR QUÉ SERÁ,
-QUE MIS PARES SON PASTORES,
-Y NO HAN VUELTO DEL PORTAL,
-QUE SERA POR QUÉ
-QUE POR QUÉ SERÁ.
-Y NO HAN VUELTO DEL PORTAL
+                ESTRIBILLO
+                DE PESTIÑOS Y ALFAJORES
+                DE PESTIÑOS Y ALFAJORES
+                YO ME TENGO QUE "JARTÁ".
+                QUE SERÁ POR QUÉ,
+                QUE POR QUÉ SERÁ,
+                QUE MIS PARES SON PASTORES,
+                Y NO HAN VUELTO DEL PORTAL,
+                QUE SERA POR QUÉ
+                QUE POR QUÉ SERÁ.
+                Y NO HAN VUELTO DEL PORTAL
             </section>
-            
+
             <section class="estrofa" aria-label="Primera estrofa">
                 <span class="estrofa-indicador">I</span>
-YA CORTÉ LA YERBABUENA
-DE LA TAPIA DEL CORRAL.
-YA CORTÉ LA YERBABUENA
-DE LA TAPIA DEL CORRAL.
-QUE ESTA NOCHE ES NOCHEBUENA
-Y MAÑANA ES "NAVIDÁ".
-QUE ESTA NOCHE ES NOCHEBUENA
-Y MAÑANA ES "NAVIDÁ".
+                YA CORTÉ LA YERBABUENA
+                DE LA TAPIA DEL CORRAL.
+                YA CORTÉ LA YERBABUENA
+                DE LA TAPIA DEL CORRAL.
+                QUE ESTA NOCHE ES NOCHEBUENA
+                Y MAÑANA ES "NAVIDÁ".
+                QUE ESTA NOCHE ES NOCHEBUENA
+                Y MAÑANA ES "NAVIDÁ".
             </section>
-            
+
             <section class="coro estrofa" aria-label="Estribillo">
-ESTRIBILLO
+                ESTRIBILLO
             </section>
 
             <section class="estrofa" aria-label="Segunda estrofa">
                 <span class="estrofa-indicador">II</span>
-SI REPICAN LAS CAMPANAS
-Y PREGUNTA EL SACRISTÁN,
-SI REPICAN LAS CAMPANAS
-Y PREGUNTA EL SACRISTÁN,
-YA VERÁS CÓMO MAÑANA
-EN BELÉN TOCANDO ESTÁN.
-YA VERÁS CÓMO MAÑANA
-EN BELÉN TOCANDO ESTÁN.
+                SI REPICAN LAS CAMPANAS
+                Y PREGUNTA EL SACRISTÁN,
+                SI REPICAN LAS CAMPANAS
+                Y PREGUNTA EL SACRISTÁN,
+                YA VERÁS CÓMO MAÑANA
+                EN BELÉN TOCANDO ESTÁN.
+                YA VERÁS CÓMO MAÑANA
+                EN BELÉN TOCANDO ESTÁN.
             </section>
-            
+
             <section class="coro estrofa" aria-label="Estribillo">
-ESTRIBILLO
+                ESTRIBILLO
             </section>
         </div>
     </main>
+
+    <div id="toast" class="toast">Letra copiada al portapapeles</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Control de tamaño de fuente
+            const btnIncrease = document.getElementById('btn-increase');
+            const btnDecrease = document.getElementById('btn-decrease');
+            const estrofas = document.querySelectorAll('.estrofa');
+            let currentFontSize = 100; // Porcentaje relativo
+
+            function updateFontSize() {
+                estrofas.forEach(el => {
+                    el.style.fontSize = `${currentFontSize}%`;
+                });
+            }
+
+            btnIncrease.addEventListener('click', () => {
+                if (currentFontSize < 150) {
+                    currentFontSize += 10;
+                    updateFontSize();
+                }
+            });
+
+            btnDecrease.addEventListener('click', () => {
+                if (currentFontSize > 80) {
+                    currentFontSize -= 10;
+                    updateFontSize();
+                }
+            });
+
+            // Copiar al portapapeles
+            const btnCopy = document.getElementById('btn-copy');
+            const toast = document.getElementById('toast');
+
+            btnCopy.addEventListener('click', () => {
+                const textToCopy = document.getElementById('letra-content').innerText;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast('Letra copiada al portapapeles');
+                }).catch(err => {
+                    console.error('Error al copiar: ', err);
+                    showToast('Error al copiar');
+                });
+            });
+
+            function showToast(message) {
+                toast.textContent = message;
+                toast.className = "toast show";
+                setTimeout(() => {
+                    toast.className = toast.className.replace("show", "");
+                }, 3000);
+            }
+
+            // Compartir (Web Share API)
+            const btnShare = document.getElementById('btn-share');
+
+            if (navigator.share) {
+                btnShare.addEventListener('click', () => {
+                    navigator.share({
+                        title: 'De Pestiños y Alfajores',
+                        text: 'Mira la letra de este villancico de Jerez: De Pestiños y Alfajores',
+                        url: window.location.href
+                    })
+                        .catch((error) => console.log('Error compartiendo', error));
+                });
+            } else {
+                // Fallback si no soporta share: copiar URL
+                btnShare.addEventListener('click', () => {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        showToast('Enlace copiado al portapapeles');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
