@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letra: Madroños al niño - Villancicos de Jerez</title>
+    <meta name="theme-color" content="#1353B4">
+    <meta name="description"
+        content="Letra del villancico de Jerez 'Madroños al niño'. La virgen lavaba, san josé tendía (bis) y al niño de dios ay curri curri currí... Villancicos tradicionales de Jerez.">
+
+    <meta property="og:type" content="music.song">
+    <meta property="og:url" content="https://villancicosdejerez.com/letras/madronos-al-nino.html">
+    <meta property="og:title" content="Madroños al niño - Letra">
+    <meta property="og:description"
+        content="Letra del villancico 'Madroños al niño'. La virgen lavaba, san josé tendía (bis) y al niño de dios ay curri curri currí...">
+    <meta property="og:image" content="../assets/icon-512.png">
+
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Madroños al niño - Letra">
+    <meta property="twitter:description" content="Letra del villancico 'Madroños al niño'. Villancicos tradicionales.">
+
+    <link rel="manifest" href="../manifest.json">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicComposition",
+      "name": "Madroños al niño",
+      "composer": "Popular",
+      "lyrics": {
+        "@type": "CreativeWork",
+        "text": "La Virgen va caminando en la mulita de los moños... la virgen lavaba, san josé tendía (bis) y al niño de dios ay curri curri currí..."
+      },
+      "inLanguage": "es"
+    }
+    </script>
+
+    <style>
+        /* CSS del archivo anterior omitido por brevedad, pero se mantiene intacto. */
+        :root {
+            --primary-color: #1353B4;
+            --primary-light: #4a7bc8;
+            --secondary-color: #f4f4f9;
+            --text-color: #333;
+            --text-muted: #666;
+            --white: #ffffff;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding-top: 70px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .back-btn {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.8em;
+            margin-right: 15px;
+            line-height: 1;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-btn:hover,
+        .back-btn:focus {
+            opacity: 0.8;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.1em, 3vw, 1.3em);
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .action-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 1.1em;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .letra-container {
+            background: var(--white);
+            padding: clamp(20px, 5vw, 25px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .estrofa {
+            white-space: pre-wrap;
+            margin: 15px 0;
+            line-height: 1.5;
+            font-family: inherit;
+            font-size: clamp(16px, 3vw, 18px);
+            overflow-wrap: break-word;
+            transition: color 0.3s ease, font-size 0.2s ease;
+        }
+
+        .estrofa-indicador {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        .coro {
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 2000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            body,
+            .letra-container,
+            .estrofa,
+            .coro,
+            .action-btn {
+                transition: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 65px;
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .letra-container {
+                padding: 15px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #121212;
+                --text-color: #f5f5f5;
+                --text-muted: #b0b0b0;
+                --white: #1e1e1e;
+            }
+
+            body {
+                background-color: var(--secondary-color);
+                color: var(--text-color);
+            }
+
+            .letra-container {
+                background: var(--white);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            .coro {
+                color: var(--primary-light);
+                border-bottom-color: var(--primary-light);
+            }
+
+            .estrofa-indicador {
+                color: var(--primary-light);
+            }
+
+            .estrofa {
+                color: var(--text-color);
+            }
+
+            .letra-container {
+                font-weight: 450;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="back-btn" aria-label="Volver al inicio">←</a>
+            <h1>Madroños al niño</h1>
+        </div>
+        <div class="action-toolbar">
+            <button class="action-btn" id="btn-decrease" aria-label="Disminuir tamaño de letra">A-</button>
+            <button class="action-btn" id="btn-increase" aria-label="Aumentar tamaño de letra">A+</button>
+            <button class="action-btn" id="btn-copy" aria-label="Copiar letra">📋</button>
+            <button class="action-btn" id="btn-share" aria-label="Compartir">🔗</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="letra-container" id="letra-content">
+
+            <section class="estrofa" aria-label="Primera estrofa">
+                <span class="estrofa-indicador">I</span>
+                LA VIRGEN VA CAMINANDO
+                EN LA MULITA DE LOS MOÑOS,
+                Y SAN JOSÉ VA “DETRÁ”
+                DÁNDOLE AL NIÑO MADROÑO.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO:
+                LA VIRGEN LAVABA, SAN JOSÉ TENDÍA (BIS)
+                Y AL NIÑO DE DIOS AY CURRI CURRI CURRÍ
+                AGUA LE TRAÍA, AGUA LE TRAÍA, AGUA LE TRAÍA.
+                MADROÑOS AL NIÑO NO LE DEMOS MÁS
+                QUE CON LOS MADROÑOS SE VÁ A EMBORRACHAR.
+                QUE SÍ, QUE NO,
+                MARÍA SE LLAMA LA MADRE DE DIOS.
+            </section>
+
+            <section class="estrofa" aria-label="Segunda estrofa">
+                <span class="estrofa-indicador">II</span>
+                LA VIRGEN PUSO UN POTAJE
+                Y SE LE OLVIDÓ EL TOMATE
+                Y SAN JOSÉ LE DECÍA
+                SI LO PRUEBO QUE ME MATEN
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Tercera estrofa">
+                <span class="estrofa-indicador">III</span>
+                LA VIRGEN COMO ES GITANA
+                A LOS GITANOS CAMELA
+                Y SAN JOSÉ COMO ES GACHÓ
+                SE REBELA, SE REBELA
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Cuarta estrofa">
+                <span class="estrofa-indicador">IV</span>
+                EL NIÑO DIOS SE HA PERDIDO
+                SU MADRE LO ANDA BUSCANDO
+                Y ESTÁ EN LA ORILLA DEL RÍO
+                AY DE JUERGA CON LOS GITANOS
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Quinta estrofa">
+                <span class="estrofa-indicador">V</span>
+                EN EL BARRIO SANTIAGO
+                ESTÁN HACIENDO PESTIÑOS
+                PARA CELEBRAR LA FIESTA
+                DEL NACIMIENTO DEL NIÑO.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+        </div>
+    </main>
+
+    <div id="toast" class="toast">Letra copiada al portapapeles</div>
+
+    <script>
+        // JavaScript idéntico al del archivo anterior omitido por brevedad, pero incluido en el código final.
+        document.addEventListener('DOMContentLoaded', () => {
+            // Control de tamaño de fuente
+            const btnIncrease = document.getElementById('btn-increase');
+            const btnDecrease = document.getElementById('btn-decrease');
+            const estrofas = document.querySelectorAll('.estrofa');
+            let currentFontSize = 100; // Porcentaje relativo
+
+            function updateFontSize() {
+                estrofas.forEach(el => {
+                    el.style.fontSize = `${currentFontSize}%`;
+                });
+            }
+
+            btnIncrease.addEventListener('click', () => {
+                if (currentFontSize < 150) {
+                    currentFontSize += 10;
+                    updateFontSize();
+                }
+            });
+
+            btnDecrease.addEventListener('click', () => {
+                if (currentFontSize > 80) {
+                    currentFontSize -= 10;
+                    updateFontSize();
+                }
+            });
+
+            // Copiar al portapapeles
+            const btnCopy = document.getElementById('btn-copy');
+            const toast = document.getElementById('toast');
+
+            btnCopy.addEventListener('click', () => {
+                const textToCopy = document.getElementById('letra-content').innerText;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast('Letra copiada al portapapeles');
+                }).catch(err => {
+                    console.error('Error al copiar: ', err);
+                    showToast('Error al copiar');
+                });
+            });
+
+            function showToast(message) {
+                toast.textContent = message;
+                toast.className = "toast show";
+                setTimeout(() => {
+                    toast.className = toast.className.replace("show", "");
+                }, 3000);
+            }
+
+            // Compartir (Web Share API)
+            const btnShare = document.getElementById('btn-share');
+
+            if (navigator.share) {
+                btnShare.addEventListener('click', () => {
+                    navigator.share({
+                        title: 'Madroños al niño',
+                        text: 'Mira la letra de este villancico de Jerez: Madroños al niño',
+                        url: window.location.href
+                    })
+                        .catch((error) => console.log('Error compartiendo', error));
+                });
+            } else {
+                // Fallback si no soporta share: copiar URL
+                btnShare.addEventListener('click', () => {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        showToast('Enlace copiado al portapapeles');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
