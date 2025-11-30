@@ -22,7 +22,6 @@
 
     <!-- SEO & Open Graph -->
     <link rel="canonical" href="https://arbonaida.github.io/Villancicos-de-Jerez/" />
-
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://arbonaida.github.io/Villancicos-de-Jerez/">
     <meta property="og:title" content="Villancicos de Jerez">
@@ -30,12 +29,8 @@
         content="Colección completa de villancicos tradicionales de Jerez. App gratuita y disponible sin conexión.">
     <meta property="og:image" content="https://arbonaida.github.io/Villancicos-de-Jerez/icons/icon-192.png">
 
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:title" content="Villancicos de Jerez">
-    <meta property="twitter:description" content="Colección de villancicos jerezanos para llevar en el móvil.">
-
     <style>
-        /* Sistema de diseño con variables CSS */
+        /* --- SISTEMA DE DISEÑO (Variables Base - Modo Claro) --- */
         :root {
             --primary-color: #1353B4;
             --primary-dark: #0e3f8a;
@@ -44,6 +39,8 @@
             --text-color: #333;
             --text-light: #666;
             --white: #ffffff;
+            --input-bg: #ffffff;
+            --input-border: #e1e5e9;
             --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
             --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
             --border-radius: 8px;
@@ -52,6 +49,18 @@
             --safe-area-left: env(safe-area-inset-left);
             --safe-area-right: env(safe-area-inset-right);
             --safe-area-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* --- VARIABLES PARA MODO OSCURO (Clase .dark-mode) --- */
+        body.dark-mode {
+            --secondary-color: #121212;
+            --text-color: #f0f0f0;
+            --text-light: #b0b0b0;
+            --white: #1e1e1e;
+            --input-bg: #2d2d2d;
+            --input-border: #404040;
+            --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.2);
+            --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         * {
@@ -64,7 +73,6 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             margin: 0;
             padding-top: calc(70px + var(--safe-area-top));
-            /* Soporte para móviles en horizontal (notch lateral) */
             padding-left: var(--safe-area-left);
             padding-right: var(--safe-area-right);
             color: var(--text-color);
@@ -73,12 +81,13 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Header con logo SVG */
+        /* HEADER */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--white);
+            color: #ffffff;
             padding: 1rem 0;
             padding-top: max(1rem, var(--safe-area-top));
             position: fixed;
@@ -98,7 +107,16 @@
             padding: 0 20px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            /* Separa título del botón */
             gap: 15px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
         }
 
         .app-icon {
@@ -121,20 +139,62 @@
 
         h1 {
             margin: 0;
-            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            /* Un poco más pequeño para que quepa el botón */
             font-weight: 700;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            flex: 1;
-            text-align: center;
+            line-height: 1.2;
         }
 
-        /* Contenido principal */
+        /* BOTÓN TOGGLE TEMA */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.3s;
+            width: 40px;
+            height: 40px;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Lógica visual del icono sol/luna */
+        .sun-icon {
+            display: none;
+        }
+
+        .moon-icon {
+            display: block;
+        }
+
+        body.dark-mode .sun-icon {
+            display: block;
+        }
+
+        body.dark-mode .moon-icon {
+            display: none;
+        }
+
+        /* MAIN */
         main {
             padding: 1.5rem 1.25rem;
             max-width: 600px;
             margin: 0 auto;
             flex: 1;
-            /* Empuja el footer hacia abajo si hay poco contenido */
             width: 100%;
         }
 
@@ -145,12 +205,13 @@
 
         #search-box {
             width: 100%;
-            padding: 1rem 3rem 1rem 3rem;
-            border: 2px solid #e1e5e9;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid var(--input-border);
             border-radius: var(--border-radius);
             font-size: 1rem;
-            background: var(--white);
-            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: all 0.3s ease;
         }
 
         #search-box:focus {
@@ -159,6 +220,22 @@
             box-shadow: 0 0 0 3px rgba(19, 83, 180, 0.2);
         }
 
+        /* AJUSTES ESPECÍFICOS MODO OSCURO PARA EL BUSCADOR */
+        body.dark-mode #search-box {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23b0b0b0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            /* Icono a la derecha en oscuro para no molestar */
+            background-size: 1.2rem;
+            padding-right: 3rem;
+            /* Espacio para el icono */
+        }
+
+        body.dark-mode #search-box:focus {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a7bc8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        /* Botón limpiar */
         #clear-search {
             position: absolute;
             right: 0;
@@ -176,6 +253,12 @@
             transition: color 0.2s;
         }
 
+        /* En modo oscuro, movemos el botón de limpiar si hay icono de fondo, o quitamos el fondo */
+        body.dark-mode #search-box:not(:placeholder-shown) {
+            background-image: none;
+            /* Quitamos la lupa si hay texto para poner la X */
+        }
+
         #clear-search:hover {
             color: var(--primary-color);
         }
@@ -184,6 +267,7 @@
             display: flex;
         }
 
+        /* LISTADO */
         .listado-villancicos {
             display: grid;
             gap: 0.75rem;
@@ -212,6 +296,16 @@
             border-left-color: var(--primary-dark);
         }
 
+        /* Override específico para enlaces en modo oscuro */
+        body.dark-mode .villancico-link {
+            border-left-color: var(--primary-light);
+        }
+
+        body.dark-mode .villancico-link:hover {
+            background: #363636;
+            border-left-color: var(--primary-color);
+        }
+
         .results-count {
             color: var(--text-light);
             font-size: 0.9rem;
@@ -230,7 +324,7 @@
             display: block;
         }
 
-        /* Notificación de actualización (Toast) */
+        /* TOAST */
         #update-toast {
             position: fixed;
             bottom: 20px;
@@ -261,7 +355,7 @@
             }
         }
 
-        /* FOOTER Y COMPARTIR */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 3rem 1.5rem;
@@ -310,46 +404,6 @@
             fill: currentColor;
         }
 
-        /* MODO OSCURO */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --secondary-color: #121212;
-                --text-color: #f0f0f0;
-                --text-light: #b0b0b0;
-                --white: #1e1e1e;
-                --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.2);
-                --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
-            }
-
-            #search-box {
-                background-color: #2d2d2d;
-                border-color: #404040;
-                color: var(--text-color);
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23b0b0b0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
-            }
-
-            #search-box:focus {
-                border-color: var(--primary-light);
-                box-shadow: 0 0 0 3px rgba(74, 123, 200, 0.2);
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a7bc8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
-            }
-
-            .villancico-link {
-                background: #2d2d2d;
-                color: #f0f0f0;
-                border-left-color: var(--primary-light);
-            }
-
-            .villancico-link:hover {
-                background: #363636;
-                border-left-color: var(--primary-color);
-            }
-
-            #clear-search {
-                color: #888;
-            }
-        }
-
         @media (min-width: 768px) {
             body {
                 padding-top: 90px;
@@ -375,10 +429,34 @@
 <body>
     <header>
         <div class="header-content">
-            <div class="app-icon">
-                <img src="icons/icon.svg" alt="Villancicos de Jerez" onerror="this.style.display='none'">
+            <div class="header-left">
+                <div class="app-icon">
+                    <img src="icons/icon.svg" alt="Villancicos de Jerez" onerror="this.style.display='none'">
+                </div>
+                <h1>Villancicos de Jerez</h1>
             </div>
-            <h1>Villancicos de Jerez</h1>
+
+            <!-- Botón toggle tema -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar modo oscuro/claro">
+                <!-- Sol (Para mostrar en modo oscuro) -->
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <!-- Luna (Para mostrar en modo claro) -->
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -401,6 +479,7 @@
         <div id="update-toast">Nueva versión disponible. Pulsa para actualizar.</div>
 
         <section class="listado-villancicos" aria-label="Lista de villancicos">
+            <!-- LISTADO CORREGIDO: Minúsculas y guiones -->
             <a href="letras/al-pasar-por-casablanca.html" class="villancico-link">AL PASAR POR CASABLANCA</a>
             <a href="letras/calle-de-san-francisco.html" class="villancico-link">CALLE DE SAN FRANCISCO</a>
             <a href="letras/camina-la-virgen-pura.html" class="villancico-link">CAMINA LA VIRGEN PURA</a>
@@ -444,7 +523,6 @@
 
         <a href="#" id="whatsapp-share" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
             aria-label="Compartir en WhatsApp">
-            <!-- AQUÍ ESTÁ EL SVG DE WHATSAPP -->
             <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                 viewBox="0 0 16 16">
                 <path
@@ -458,6 +536,34 @@
         document.addEventListener('DOMContentLoaded', () => {
             const searchBox = document.getElementById('search-box');
             const clearBtn = document.getElementById('clear-search');
+
+            /* --- LÓGICA DE TEMA OSCURO/CLARO --- */
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // 1. Revisar si hay preferencia guardada
+            const savedTheme = localStorage.getItem('theme');
+
+            // 2. Revisar preferencia del sistema
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Aplicar tema inicial
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                body.classList.add('dark-mode');
+            }
+
+            // Evento botón
+            themeToggleBtn.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                // Guardar preferencia
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            /* --- LÓGICA DEL BUSCADOR --- */
             let searchTimeout;
 
             function updateClearButton() {
@@ -505,17 +611,17 @@
                 filterVillancicos();
             });
 
+            // Inicializar
             filterVillancicos();
 
-            // LÓGICA DE COMPARTIR EN WHATSAPP
+            /* --- WHATSAPP SHARE DINÁMICO --- */
             const whatsappBtn = document.getElementById('whatsapp-share');
             const shareText = "¡Mira esta colección de Villancicos de Jerez! Letras tradicionales en una app moderna y gratuita:";
             const shareUrl = window.location.href;
-
             whatsappBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)} ${encodeURIComponent(shareUrl)}`;
         });
 
-        // REGISTRO SW COMPATIBLE
+        /* --- SERVICE WORKER (PWA) --- */
         if ('serviceWorker' in navigator) {
             let newWorker;
             navigator.serviceWorker.addEventListener('controllerchange', () => {
