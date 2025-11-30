@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letra: Los segadores - Villancicos de Jerez</title>
+    <meta name="theme-color" content="#1353B4">
+    <meta name="description"
+        content="Letra del villancico 'Los segadores', una larga y popular copla narrativa. Salieron tres segadores (bis) a segar fuera de casa. (bis). Villancicos tradicionales de Jerez.">
+
+    <meta property="og:type" content="music.song">
+    <meta property="og:url" content="https://villancicosdejerez.com/letras/los-segadores.html">
+    <meta property="og:title" content="Los segadores - Letra">
+    <meta property="og:description"
+        content="Letra del villancico 'Los segadores'. Salieron tres segadores (bis) a segar fuera de casa. (bis).">
+    <meta property="og:image" content="../assets/icon-512.png">
+
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Los segadores - Letra">
+    <meta property="twitter:description" content="Letra del villancico 'Los segadores'. Villancicos tradicionales.">
+
+    <link rel="manifest" href="../manifest.json">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicComposition",
+      "name": "Los segadores",
+      "composer": "Tradicional",
+      "lyrics": {
+        "@type": "CreativeWork",
+        "text": "Salieron tres segadores (bis) a segar fuera de casa. (bis) Llevaban dedines de oro (bis) la 'joces' de fina plata. (bis)..."
+      },
+      "inLanguage": "es"
+    }
+    </script>
+
+    <style>
+        /* CSS del archivo anterior omitido por brevedad, pero se mantiene intacto. */
+        :root {
+            --primary-color: #1353B4;
+            --primary-light: #4a7bc8;
+            --secondary-color: #f4f4f9;
+            --text-color: #333;
+            --text-muted: #666;
+            --white: #ffffff;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding-top: 70px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .back-btn {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.8em;
+            margin-right: 15px;
+            line-height: 1;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-btn:hover,
+        .back-btn:focus {
+            opacity: 0.8;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.1em, 3vw, 1.3em);
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .action-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 1.1em;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .letra-container {
+            background: var(--white);
+            padding: clamp(20px, 5vw, 25px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .estrofa {
+            white-space: pre-wrap;
+            margin: 15px 0;
+            line-height: 1.5;
+            font-family: inherit;
+            font-size: clamp(16px, 3vw, 18px);
+            overflow-wrap: break-word;
+            transition: color 0.3s ease, font-size 0.2s ease;
+        }
+
+        .estrofa-indicador {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        .coro {
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 2000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            body,
+            .letra-container,
+            .estrofa,
+            .coro,
+            .action-btn {
+                transition: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 65px;
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .letra-container {
+                padding: 15px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #121212;
+                --text-color: #f5f5f5;
+                --text-muted: #b0b0b0;
+                --white: #1e1e1e;
+            }
+
+            body {
+                background-color: var(--secondary-color);
+                color: var(--text-color);
+            }
+
+            .letra-container {
+                background: var(--white);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            .coro {
+                color: var(--primary-light);
+                border-bottom-color: var(--primary-light);
+            }
+
+            .estrofa-indicador {
+                color: var(--primary-light);
+            }
+
+            .estrofa {
+                color: var(--text-color);
+            }
+
+            .letra-container {
+                font-weight: 450;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="back-btn" aria-label="Volver al inicio">←</a>
+            <h1>Los segadores</h1>
+        </div>
+        <div class="action-toolbar">
+            <button class="action-btn" id="btn-decrease" aria-label="Disminuir tamaño de letra">A-</button>
+            <button class="action-btn" id="btn-increase" aria-label="Aumentar tamaño de letra">A+</button>
+            <button class="action-btn" id="btn-copy" aria-label="Copiar letra">📋</button>
+            <button class="action-btn" id="btn-share" aria-label="Compartir">🔗</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="letra-container" id="letra-content">
+
+            <section class="estrofa" aria-label="Primera estrofa">
+                <span class="estrofa-indicador">I</span>
+                SALIERON TRES SEGADORES (BIS)
+                A SEGAR FUERA DE CASA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Segunda estrofa">
+                <span class="estrofa-indicador">II</span>
+                LLEVABAN DEDINES DE ORO (BIS)
+                LA «JOCES» DE FINA PLATA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Tercera estrofa">
+                <span class="estrofa-indicador">III</span>
+                Y UNO DE LOS SEGADORES (BIS)
+                LLEVA ROPITA DE HOLANDA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Cuarta estrofa">
+                <span class="estrofa-indicador">IV</span>
+                LLEGARON A CIERTO PUEBLO (BIS)
+                SE PASEAN POR LA PLAZA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Quinta estrofa">
+                <span class="estrofa-indicador">V</span>
+                UNA DAMA EN UN BALCÓN (BIS)
+                DEL SEGADOR ESTÁ PRENDADA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Sexta estrofa">
+                <span class="estrofa-indicador">VI</span>
+                Y LO HA MANDAO LLAMAR (BIS)
+                CON UNA DE SUS CRIADAS. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Séptima estrofa">
+                <span class="estrofa-indicador">VII</span>
+                EL SEGADOR OBEDIENTE (BIS)
+                FUÉ DETRÁS DE LA CRIADA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Octava estrofa">
+                <span class="estrofa-indicador">VIII</span>
+                SÍGAME USTED SEGADOR (BIS)
+                QUE MI SEÑORA LO LLAMA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Novena estrofa">
+                <span class="estrofa-indicador">IX</span>
+                ¿QUE ME QUIERE SEÑORITA (BIS)
+                QUE ME QUIERE Y QUE ME MANDA?. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima estrofa">
+                <span class="estrofa-indicador">X</span>
+                QUIERO QUE ME SIEGUE USTED (BIS)
+                UNA POCA DE CEBADA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima primera estrofa">
+                <span class="estrofa-indicador">XI</span>
+                DÍGAME USTED SEÑORITA (BIS)
+                ¿DÓNDE LA TIENE SEMBRADA? (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima segunda estrofa">
+                <span class="estrofa-indicador">XII</span>
+                NI ESTÁ EN ALTO NI ESTÁ EN BAJO (BIS)
+                NI ESTÁ EN CERRO NI EN CAÑADA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima tercera estrofa">
+                <span class="estrofa-indicador">XIII</span>
+                ESTÁ EN MEDIO DE DOS COLUMNAS (BIS)
+                QUE LAS SOSTIENE MI ALMA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima cuarta estrofa">
+                <span class="estrofa-indicador">XIV</span>
+                ESA CEBADA SEÑORA (BIS)
+                NO ESTÁ PARA YO SEGARLA (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima quinta estrofa">
+                <span class="estrofa-indicador">XV</span>
+                QUE ES PARA RICOS MARQUESES (BIS)
+                O «PA» EL DUEÑO DE LA CASA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima sexta estrofa">
+                <span class="estrofa-indicador">XVI</span>
+                SIÉGUELA USTED SEGADOR (BIS)
+                QUE PARA USTED ESTÁ SEMBRADA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima séptima estrofa">
+                <span class="estrofa-indicador">XVII</span>
+                SEGARON SIETE GAVILLAS (BIS)
+                Y A LAS DOCE SE LEVANTAN. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima octava estrofa">
+                <span class="estrofa-indicador">XVIII</span>
+                EL PADRE QUE LA ESCUCHABA: (BIS)
+                DIME NIÑA ¿CON QUIÉN HABLAS? (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Décima novena estrofa">
+                <span class="estrofa-indicador">XIX</span>
+                ¿CON QUIÉN QUIERE USTED QUE HABLE? (BIS)
+                CON UNA DE MIS CRIADAS. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima estrofa">
+                <span class="estrofa-indicador">XX</span>
+                EL SEGADOR AL OÍR ESTO (BIS)
+                PEGA UN SALTO DE LA CAMA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima primera estrofa">
+                <span class="estrofa-indicador">XXI</span>
+                NO TE VAYAS SEGADOR (BIS)
+                QUE SE TE OLVIDA LA PAGA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima segunda estrofa">
+                <span class="estrofa-indicador">XXII</span>
+                LE HA DADO DOS MIL DOBLONES (BIS)
+                EN UN PAÑUELO DE HOLANDA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima tercera estrofa">
+                <span class="estrofa-indicador">XXIII</span>
+                QUE MÁS VALÍA EL PAÑUELO (BIS)
+                QUE EL DINERO QUE LLEVABA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima cuarta estrofa">
+                <span class="estrofa-indicador">XXIV</span>
+                AL OTRO DÍA SIGUIENTE (BIS)
+                LAS CAMPANAS REDOBLABAN. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima quinta estrofa">
+                <span class="estrofa-indicador">XXV</span>
+                ¿QUIÉN SE HA MUERTO? (BIS)
+                EL SEGADOR QUE SEGABA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima sexta estrofa">
+                <span class="estrofa-indicador">XXVI</span>
+                NO SE HA MUERTO, NO SE HA MUERTO (BIS)
+                QUE LO HA MATADO UNA DAMA (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima séptima estrofa">
+                <span class="estrofa-indicador">XXVII</span>
+                ¿QUIÉN HA SIDO ESA SEÑORA? (BIS)
+                LA SEÑORA DE LA ALGABA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima octava estrofa">
+                <span class="estrofa-indicador">XXVIII</span>
+                EL DINERO PA L’ENTIERRO(BIS)
+                Y EL PAÑUELO PA LA CARA. (BIS)
+            </section>
+
+            <section class="estrofa" aria-label="Vigésima novena estrofa">
+                <span class="estrofa-indicador">XXIX</span>
+                Y AQUÍ SE ACABA LA HISTORIA (BIS)
+                DEL SEGADOR QUE SEGABA. (BIS)
+            </section>
+
+        </div>
+    </main>
+
+    <div id="toast" class="toast">Letra copiada al portapapeles</div>
+
+    <script>
+        // JavaScript idéntico al del archivo anterior omitido por brevedad, pero incluido en el código final.
+        document.addEventListener('DOMContentLoaded', () => {
+            // Control de tamaño de fuente
+            const btnIncrease = document.getElementById('btn-increase');
+            const btnDecrease = document.getElementById('btn-decrease');
+            const estrofas = document.querySelectorAll('.estrofa');
+            let currentFontSize = 100; // Porcentaje relativo
+
+            function updateFontSize() {
+                estrofas.forEach(el => {
+                    el.style.fontSize = `${currentFontSize}%`;
+                });
+            }
+
+            btnIncrease.addEventListener('click', () => {
+                if (currentFontSize < 150) {
+                    currentFontSize += 10;
+                    updateFontSize();
+                }
+            });
+
+            btnDecrease.addEventListener('click', () => {
+                if (currentFontSize > 80) {
+                    currentFontSize -= 10;
+                    updateFontSize();
+                }
+            });
+
+            // Copiar al portapapeles
+            const btnCopy = document.getElementById('btn-copy');
+            const toast = document.getElementById('toast');
+
+            btnCopy.addEventListener('click', () => {
+                const textToCopy = document.getElementById('letra-content').innerText;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast('Letra copiada al portapapeles');
+                }).catch(err => {
+                    console.error('Error al copiar: ', err);
+                    showToast('Error al copiar');
+                });
+            });
+
+            function showToast(message) {
+                toast.textContent = message;
+                toast.className = "toast show";
+                setTimeout(() => {
+                    toast.className = toast.className.replace("show", "");
+                }, 3000);
+            }
+
+            // Compartir (Web Share API)
+            const btnShare = document.getElementById('btn-share');
+
+            if (navigator.share) {
+                btnShare.addEventListener('click', () => {
+                    navigator.share({
+                        title: 'Los segadores',
+                        text: 'Mira la letra de este villancico de Jerez: Los segadores',
+                        url: window.location.href
+                    })
+                        .catch((error) => console.log('Error compartiendo', error));
+                });
+            } else {
+                // Fallback si no soporta share: copiar URL
+                btnShare.addEventListener('click', () => {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        showToast('Enlace copiado al portapapeles');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
