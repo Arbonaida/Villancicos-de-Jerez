@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letra: De las doce palabras retorneadas - Villancicos de Jerez</title>
+    <meta name="theme-color" content="#1353B4">
+    <meta name="description"
+        content="Letra del villancico 'De las doce palabras retorneadas'. De las doce palabras retorneadas dime la una... Villancicos tradicionales de Jerez.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="music.song">
+    <meta property="og:url" content="https://villancicosdejerez.com/letras/de-las-doce-palabras-retorneadas.html">
+    <meta property="og:title" content="De las doce palabras retorneadas - Letra">
+    <meta property="og:description"
+        content="Letra del villancico 'De las doce palabras retorneadas'. De las doce palabras retorneadas dime la una...">
+    <meta property="og:image" content="../assets/icon-512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="De las doce palabras retorneadas - Letra">
+    <meta property="twitter:description"
+        content="Letra del villancico 'De las doce palabras retorneadas'. Villancicos tradicionales.">
+
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- JSON-LD Datos Estructurados -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicComposition",
+      "name": "De las doce palabras retorneadas",
+      "composer": "Tradicional",
+      "lyrics": {
+        "@type": "CreativeWork",
+        "text": "De las doce palabras retorneadas dime la una, la una la virgen pura..."
+      },
+      "inLanguage": "es"
+    }
+    </script>
+
+    <style>
+        /* Reset y variables CSS */
+        :root {
+            --primary-color: #1353B4;
+            --primary-light: #4a7bc8;
+            --secondary-color: #f4f4f9;
+            --text-color: #333;
+            --text-muted: #666;
+            --white: #ffffff;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding-top: 70px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Header mejorado */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .back-btn {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.8em;
+            margin-right: 15px;
+            line-height: 1;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-btn:hover,
+        .back-btn:focus {
+            opacity: 0.8;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.1em, 3vw, 1.3em);
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Toolbar de acciones */
+        .action-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 1.1em;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Contenido principal */
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .letra-container {
+            background: var(--white);
+            padding: clamp(20px, 5vw, 25px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        /* Estrofas optimizadas */
+        .estrofa {
+            white-space: pre-wrap;
+            margin: 15px 0;
+            line-height: 1.5;
+            font-family: inherit;
+            font-size: clamp(16px, 3vw, 18px);
+            overflow-wrap: break-word;
+            transition: color 0.3s ease, font-size 0.2s ease;
+        }
+
+        /* Números romanos centrados y en negrita */
+        .estrofa-indicador {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        .coro {
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Toast de notificación */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 2000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+
+            body,
+            .letra-container,
+            .estrofa,
+            .coro,
+            .action-btn {
+                transition: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 65px;
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .letra-container {
+                padding: 15px;
+            }
+        }
+
+        /* MODO OSCURO MEJORADO */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #121212;
+                --text-color: #f5f5f5;
+                --text-muted: #b0b0b0;
+                --white: #1e1e1e;
+            }
+
+            body {
+                background-color: var(--secondary-color);
+                color: var(--text-color);
+            }
+
+            .letra-container {
+                background: var(--white);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            .coro {
+                color: var(--primary-light);
+                border-bottom-color: var(--primary-light);
+            }
+
+            .estrofa-indicador {
+                color: var(--primary-light);
+            }
+
+            .estrofa {
+                color: var(--text-color);
+            }
+
+            .letra-container {
+                font-weight: 450;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="back-btn" aria-label="Volver al inicio">←</a>
+            <h1>De las doce palabras retorneadas</h1>
+        </div>
+        <div class="action-toolbar">
+            <button class="action-btn" id="btn-decrease" aria-label="Disminuir tamaño de letra">A-</button>
+            <button class="action-btn" id="btn-increase" aria-label="Aumentar tamaño de letra">A+</button>
+            <button class="action-btn" id="btn-copy" aria-label="Copiar letra">📋</button>
+            <button class="action-btn" id="btn-share" aria-label="Compartir">🔗</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="letra-container" id="letra-content">
+            <section class="estrofa" aria-label="Primera estrofa">
+                <span class="estrofa-indicador">I</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LA UNA,
+                LA UNA LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                LA DOS LA DE MOISÉS
+                DONDE CRISTO PUSO LOS PIES
+                PARA IR A LA CASA SANTA DE JERUSALÉN,
+                SANTO VARÓN
+                DAME LA VELA QUE A TI TE ALUMBRA
+                QUE A MI ME ALUMBRA EL SOL
+                Y A USTED LA LUNA.
+            </section>
+
+            <section class="estrofa" aria-label="Tercera estrofa">
+                <span class="estrofa-indicador">III</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS TRES,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Cuarta estrofa">
+                <span class="estrofa-indicador">IV</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS CUATRO,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Quinta estrofa">
+                <span class="estrofa-indicador">V</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS CINCO,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Sexta estrofa">
+                <span class="estrofa-indicador">VI</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS SEIS,
+                LAS SEIS, LAS SEIS VELAS QUE SALIERON DE GALILEA,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Séptima estrofa">
+                <span class="estrofa-indicador">VII</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS SIETE,
+                LAS SIETE, LOS SIETE DOLORES,
+                LAS SEIS, LAS SEIS VELAS QUE SALIERON DE GALILEA,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Octava estrofa">
+                <span class="estrofa-indicador">VIII</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS OCHO,
+                LAS OCHO, LOS OCHO GOZOS,
+                LAS SIETE, LOS SIETE DOLORES,
+                LAS SEIS, LAS SEIS VELAS QUE SALIERON DE GALILEA,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Novena estrofa">
+                <span class="estrofa-indicador">IX</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS NUEVE,
+                LAS NUEVE, LOS NUEVE MESES,
+                LAS OCHO, LOS OCHO GOZOS,
+                LAS SIETE, LOS SIETE DOLORES,
+                LAS SEIS, LAS SEIS VELAS QUE SALIERON DE GALILEA,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Décima estrofa">
+                <span class="estrofa-indicador">X</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS DIEZ,
+                LAS DIEZ, LOS DIEZ MANDAMIENTOS,
+                LAS NUEVE, LOS NUEVE MESES,
+                LAS OCHO, LOS OCHO GOZOS,
+                LAS SIETE, LOS SIETE DOLORES,
+                LAS SEIS, LAS SEIS VELAS QUE SALIERON DE GALILEA,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Undécima estrofa">
+                <span class="estrofa-indicador">XI</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS ONCE,
+                LAS ONCE, LAS ONCE VÍRGENES,
+                LAS DIEZ, LOS DIEZ MANDAMIENTOS,
+                LAS NUEVE, LOS NUEVE MESES,
+                LAS OCHO, LOS OCHO GOZOS,
+                LAS SIETE, LOS SIETE DOLORES,
+                LAS SEIS, LAS SEIS VELAS QUE SALIERON DE GALILEA,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+
+            <section class="estrofa" aria-label="Duodécima estrofa">
+                <span class="estrofa-indicador">XII</span>
+                DE LAS DOCE PALABRAS RETORNEADAS DIME LAS DOCE,
+                LAS DOCE, LOS DOCE APÓSTOLES,
+                LAS ONCE, LAS ONCE VÍRGENES,
+                LAS DIEZ, LOS DIEZ MANDAMIENTOS,
+                LAS NUEVE, LOS NUEVE MESES,
+                LAS OCHO, LOS OCHO GOZOS,
+                LAS SIETE, LOS SIETE DOLORES,
+                LAS SEIS, LAS SEIS VELAS QUE SALIERON DE GALILEA,
+                LAS CINCO, LAS CINCO LLAGAS,
+                LAS CUATRO, LOS CUATRO EVANGELIOS,
+                LAS TRES, LAS TRES MARÍAS,
+                LA UNA, LA VIRGEN PURA.
+            </section>
+
+            <section class="coro estrofa" aria-label="Estribillo">
+                ESTRIBILLO
+            </section>
+        </div>
+    </main>
+
+    <div id="toast" class="toast">Letra copiada al portapapeles</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Control de tamaño de fuente
+            const btnIncrease = document.getElementById('btn-increase');
+            const btnDecrease = document.getElementById('btn-decrease');
+            const estrofas = document.querySelectorAll('.estrofa');
+            let currentFontSize = 100; // Porcentaje relativo
+
+            function updateFontSize() {
+                estrofas.forEach(el => {
+                    el.style.fontSize = `${currentFontSize}%`;
+                });
+            }
+
+            btnIncrease.addEventListener('click', () => {
+                if (currentFontSize < 150) {
+                    currentFontSize += 10;
+                    updateFontSize();
+                }
+            });
+
+            btnDecrease.addEventListener('click', () => {
+                if (currentFontSize > 80) {
+                    currentFontSize -= 10;
+                    updateFontSize();
+                }
+            });
+
+            // Copiar al portapapeles
+            const btnCopy = document.getElementById('btn-copy');
+            const toast = document.getElementById('toast');
+
+            btnCopy.addEventListener('click', () => {
+                const textToCopy = document.getElementById('letra-content').innerText;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast('Letra copiada al portapapeles');
+                }).catch(err => {
+                    console.error('Error al copiar: ', err);
+                    showToast('Error al copiar');
+                });
+            });
+
+            function showToast(message) {
+                toast.textContent = message;
+                toast.className = "toast show";
+                setTimeout(() => {
+                    toast.className = toast.className.replace("show", "");
+                }, 3000);
+            }
+
+            // Compartir (Web Share API)
+            const btnShare = document.getElementById('btn-share');
+
+            if (navigator.share) {
+                btnShare.addEventListener('click', () => {
+                    navigator.share({
+                        title: 'De las doce palabras retorneadas',
+                        text: 'Mira la letra de este villancico de Jerez: De las doce palabras retorneadas',
+                        url: window.location.href
+                    })
+                        .catch((error) => console.log('Error compartiendo', error));
+                });
+            } else {
+                // Fallback si no soporta share: copiar URL
+                btnShare.addEventListener('click', () => {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        showToast('Enlace copiado al portapapeles');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
