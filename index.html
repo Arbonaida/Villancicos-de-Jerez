@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villancicos de Jerez - Colección Completa</title>
-    <meta name="description" content="Explora la colección completa de villancicos tradicionales de Jerez con búsqueda en tiempo real">
+    <meta name="description"
+        content="Explora la colección completa de villancicos tradicionales de Jerez con búsqueda en tiempo real">
     <meta name="theme-color" content="#1353B4">
-    
+
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
     <link rel="apple-touch-icon" href="icons/icon-192.png">
     <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
-    
+
     <style>
         /* Sistema de diseño con variables CSS */
         :root {
@@ -22,8 +24,8 @@
             --text-color: #333;
             --text-light: #666;
             --white: #ffffff;
-            --shadow-light: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-medium: 0 4px 8px rgba(0,0,0,0.1);
+            --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
             --border-radius: 8px;
             --transition: all 0.3s ease;
         }
@@ -77,13 +79,15 @@
             /* Tamaño base responsivo */
             width: clamp(28px, 8vw, 40px);
             height: clamp(28px, 8vw, 40px);
-            filter: brightness(0) invert(1); /* Hace el SVG blanco */
+            filter: brightness(0) invert(1);
+            /* Hace el SVG blanco */
         }
 
         .app-icon img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Mantiene la proporción del SVG */
+            object-fit: contain;
+            /* Mantiene la proporción del SVG */
             display: block;
         }
 
@@ -98,7 +102,7 @@
             margin: 0;
             font-size: clamp(1.5rem, 5vw, 2.2rem);
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             flex: 1;
             text-align: center;
         }
@@ -191,7 +195,7 @@
             * {
                 transition: none !important;
             }
-            
+
             .villancico-link:hover {
                 transform: none;
             }
@@ -204,10 +208,10 @@
                 --text-color: #f0f0f0;
                 --text-light: #b0b0b0;
                 --white: #1e1e1e;
-                --shadow-light: 0 2px 4px rgba(0,0,0,0.2);
-                --shadow-medium: 0 4px 8px rgba(0,0,0,0.3);
+                --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.2);
+                --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
             }
-            
+
             /* Mejor contraste para el buscador */
             #search-box {
                 background-color: #2d2d2d;
@@ -215,34 +219,34 @@
                 color: var(--text-color);
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23b0b0b0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
             }
-            
+
             #search-box:focus {
                 border-color: var(--primary-light);
                 box-shadow: 0 0 0 3px rgba(74, 123, 200, 0.2);
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a7bc8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
             }
-            
+
             #search-box::placeholder {
                 color: #888;
             }
-            
+
             /* Mejor contraste para los enlaces */
             .villancico-link {
                 background: #2d2d2d;
                 color: #f0f0f0;
                 border-left-color: var(--primary-light);
             }
-            
+
             .villancico-link:hover {
                 background: #363636;
                 border-left-color: var(--primary-color);
             }
-            
+
             /* Mejor legibilidad para texto de resultados */
             .results-count {
                 color: #a0a0a0;
             }
-            
+
             .no-results {
                 color: #a0a0a0;
             }
@@ -253,16 +257,16 @@
             body {
                 padding-top: 80px;
             }
-            
+
             .header-content {
                 padding: 0 2rem;
                 gap: 20px;
             }
-            
+
             main {
                 padding: 2rem;
             }
-            
+
             .app-icon {
                 width: 40px;
                 height: 40px;
@@ -274,16 +278,16 @@
             main {
                 padding: 1rem;
             }
-            
+
             .villancico-link {
                 padding: 1rem;
             }
-            
+
             .header-content {
                 gap: 12px;
                 padding: 0 15px;
             }
-            
+
             .app-icon {
                 width: 28px;
                 height: 28px;
@@ -295,43 +299,38 @@
             .header-content {
                 max-width: 800px;
             }
-            
+
             main {
                 max-width: 800px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-content">
             <div class="app-icon">
-                <img src="icons/icon.svg" alt="Villancicos de Jerez" 
-                     onerror="this.style.display='none'">
+                <img src="icons/icon.svg" alt="Villancicos de Jerez" onerror="this.style.display='none'">
             </div>
-            
+
             <h1>Villancicos de Jerez</h1>
         </div>
     </header>
-    
+
     <main>
         <div class="search-container">
-            <input 
-                type="text" 
-                id="search-box" 
-                placeholder="Buscar villancico..." 
-                aria-label="Buscar villancico"
-                autocomplete="off"
-            >
+            <input type="text" id="search-box" placeholder="Buscar villancico..." aria-label="Buscar villancico"
+                autocomplete="off">
         </div>
-        
+
         <div class="results-count" id="results-count" aria-live="polite"></div>
-        
+
         <section class="listado-villancicos" aria-label="Lista de villancicos">
             <a href="letras/al-pasar-por-casablanca.html" class="villancico-link">
                 AL PASAR POR CASABLANCA
             </a>
-            
+
             <a href="letras/tu-carita-divina.html" class="villancico-link">
                 DE TU CARITA DIVINA
             </a>
@@ -341,8 +340,14 @@
             <a href="letras/pestinos-alfajores.html" class="villancico-link">
                 DE PESTIÑOS Y ALFAJORES
             </a>
+            <a href="letras/Dime-niño.html" class="villancico-link">
+                DIME NIÑO
+            </a>
+            <a href="letras/el-cura-no-va-a-la-iglesia.html" class="villancico-link">
+                EL CURA NO VA A LA IGLESIA
+            </a>
         </section>
-        
+
         <div class="no-results" id="no-results" aria-live="polite">
             <p>No se encontraron villancicos que coincidan con tu búsqueda.</p>
         </div>
@@ -355,18 +360,18 @@
             const links = document.querySelectorAll('.villancico-link');
             const resultsCount = document.getElementById('results-count');
             const noResults = document.getElementById('no-results');
-            
+
             let visibleCount = 0;
 
             links.forEach(link => {
                 const linkText = link.textContent || link.innerText;
                 const matches = filter === '' || linkText.toUpperCase().includes(filter);
-                
+
                 link.style.display = matches ? 'flex' : 'none';
                 if (matches) visibleCount++;
             });
 
-            resultsCount.textContent = filter === '' 
+            resultsCount.textContent = filter === ''
                 ? `${links.length} villancicos disponibles`
                 : `${visibleCount} de ${links.length} villancicos encontrados`;
 
@@ -376,12 +381,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const searchBox = document.getElementById('search-box');
             let searchTimeout;
-            
+
             searchBox.addEventListener('input', () => {
                 clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(filterVillancicos, 150);
             });
-            
+
             searchBox.addEventListener('paste', filterVillancicos);
             filterVillancicos();
         });
@@ -398,4 +403,5 @@
         }
     </script>
 </body>
+
 </html>
