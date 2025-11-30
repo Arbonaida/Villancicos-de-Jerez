@@ -51,6 +51,7 @@
             --safe-area-top: env(safe-area-inset-top);
             --safe-area-left: env(safe-area-inset-left);
             --safe-area-right: env(safe-area-inset-right);
+            --safe-area-bottom: env(safe-area-inset-bottom);
         }
 
         * {
@@ -85,7 +86,6 @@
             box-shadow: var(--shadow-medium);
             z-index: 1000;
             backdrop-filter: blur(10px);
-            /* Asegurar que el header cubra todo el ancho incluso con notch lateral */
             padding-left: var(--safe-area-left);
             padding-right: var(--safe-area-right);
         }
@@ -148,14 +148,12 @@
             transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        /* Estado focus para modo claro */
         #search-box:focus {
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(19, 83, 180, 0.2);
         }
 
-        /* Botón limpiar búsqueda */
         #clear-search {
             position: absolute;
             right: 0;
@@ -258,6 +256,53 @@
             }
         }
 
+        /* FOOTER Y COMPARTIR */
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            padding-bottom: calc(3rem + var(--safe-area-bottom));
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .footer-text {
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+            background-color: #128C7E;
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.98);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
         /* MODO OSCURO */
         @media (prefers-color-scheme: dark) {
             :root {
@@ -349,7 +394,6 @@
         <div id="update-toast">Nueva versión disponible. Pulsa para actualizar.</div>
 
         <section class="listado-villancicos" aria-label="Lista de villancicos">
-            <!-- Nombres de archivo normalizados: minúsculas, sin tildes/ñ, guiones en vez de espacios -->
             <a href="letras/al-pasar-por-casablanca.html" class="villancico-link">AL PASAR POR CASABLANCA</a>
             <a href="letras/calle-de-san-francisco.html" class="villancico-link">CALLE DE SAN FRANCISCO</a>
             <a href="letras/camina-la-virgen-pura.html" class="villancico-link">CAMINA LA VIRGEN PURA</a>
@@ -386,13 +430,27 @@
         </div>
     </main>
 
+    <footer>
+        <div class="footer-text">
+            <p>Gracias por usar este libreto moderno de villancicos.</p>
+        </div>
+
+        <a href="#" id="whatsapp-share" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
+            aria-label="Compartir en WhatsApp">
+            <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.009.575 2.173.894 3.477.894 3.181 0 5.768-2.587 5.768-5.766-.001-3.181-2.588-5.768-5.768-5.768zm9.263 4.988c-.797-1.19-1.85-2.11-3.033-2.653-1.08-.496-2.274-.757-3.468-.757-4.456 0-8.084 3.634-8.086 8.102-.001 1.427.373 2.825 1.096 4.075l-1.378 5.035 5.163-1.355c1.215.662 2.581 1.008 3.969 1.008 4.457 0 8.084-3.634 8.085-8.101.001-1.928-.567-3.774-1.789-5.354zm-2.072 4.908c-.287-.143-1.693-.835-1.956-.931-.262-.095-.453-.143-.643.143-.191.286-.74.931-.906 1.121-.167.191-.334.215-.62.071-.287-.143-1.213-.446-2.31-1.424-.855-.763-1.433-1.705-1.6-1.992-.167-.286-.018-.44.126-.583.13-.129.286-.334.429-.501.144-.166.191-.286.287-.477.095-.19.047-.357-.024-.5-.071-.143-.643-1.549-.881-2.121-.232-.557-.468-.481-.643-.49-.167-.009-.358-.009-.549-.009-.191 0-.501.071-.763.358-.262.286-1.001.978-1.001 2.385 0 1.407 1.025 2.767 1.168 2.958.143.19 2.019 3.081 4.889 4.319 2.868 1.237 2.868.825 3.393.777.525-.048 1.693-.692 1.932-1.359.238-.667.238-1.238.167-1.359-.072-.12-.263-.191-.55-.334z" />
+            </svg>
+            Compártelo
+        </a>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchBox = document.getElementById('search-box');
             const clearBtn = document.getElementById('clear-search');
             let searchTimeout;
 
-            // Función para actualizar estado del botón "limpiar"
             function updateClearButton() {
                 if (searchBox.value.length > 0) {
                     clearBtn.classList.add('visible');
@@ -428,9 +486,7 @@
 
             searchBox.addEventListener('input', () => {
                 clearTimeout(searchTimeout);
-                // Actualizamos visualmente el botón de borrar inmediatamente
                 updateClearButton();
-                // Retrasamos el filtrado pesado
                 searchTimeout = setTimeout(filterVillancicos, 150);
             });
 
@@ -440,15 +496,19 @@
                 filterVillancicos();
             });
 
-            // Inicializar filtro y botón por si hay texto guardado por el navegador
             filterVillancicos();
+
+            // LÓGICA DE COMPARTIR EN WHATSAPP
+            const whatsappBtn = document.getElementById('whatsapp-share');
+            const shareText = "¡Mira esta colección de Villancicos de Jerez! Letras tradicionales en una app moderna y gratuita:";
+            const shareUrl = window.location.href;
+
+            whatsappBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)} ${encodeURIComponent(shareUrl)}`;
         });
 
-        // REGISTRO SW COMPATIBLE CON GITHUB PAGES Y ACTUALIZACIÓN CORRECTA
+        // REGISTRO SW COMPATIBLE
         if ('serviceWorker' in navigator) {
             let newWorker;
-
-            // Manejador para recargar cuando el SW nuevo tome el control
             navigator.serviceWorker.addEventListener('controllerchange', () => {
                 window.location.reload();
             });
@@ -461,15 +521,11 @@
 
                     registration.addEventListener('updatefound', () => {
                         newWorker = registration.installing;
-
                         newWorker.addEventListener('statechange', () => {
-                            // Si hay un nuevo SW instalado y esperando (waiting)
                             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                                 const toast = document.getElementById('update-toast');
                                 toast.style.display = 'block';
-
                                 toast.addEventListener('click', () => {
-                                    // Enviar mensaje al SW para que salte la espera
                                     newWorker.postMessage({ type: 'SKIP_WAITING' });
                                     toast.style.display = 'none';
                                 });
